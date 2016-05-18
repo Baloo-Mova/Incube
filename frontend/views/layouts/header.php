@@ -38,11 +38,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <div class="button navbar-right">
-                  <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s">Вхід</button>
-                  <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.6s">Реєстрація</button>
-              </div>
+            <?= $this->render('//layouts/header_reg_buttons.php') ?> 
 			 
               <ul class="main-nav nav navbar-nav navbar-center">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="#">Головна</a></li>
