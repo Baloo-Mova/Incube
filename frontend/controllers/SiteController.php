@@ -74,6 +74,7 @@ class SiteController extends Controller
     {
         echo"<p>ggwp</p>";
         echo "123";
+        echo "1234";
         return $this->render('index');
     }
 
