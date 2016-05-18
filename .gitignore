@@ -31,3 +31,11 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
+
+*.bowerrc
+init
+*.bat
+LICENSE.md
+*.md
+Vagrantfile
+requirements.php
