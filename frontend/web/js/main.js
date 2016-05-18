@@ -59,6 +59,36 @@ $(document).ready(function() {
  
 })
 
+$(".myBlock").click(function() {
+  window.location = $(this).find("a").attr("href"); 
+  return false;
+});
+// Record the last element to be right-clicked, since that information isn't
+// passed to the contextmenu click handler that calls top_open_blacklist_ui
+var rightclicked_item = null;
+if (document.body) {
+  document.body.addEventListener("contextmenu", function(e) {
+    rightclicked_item = e.srcElement;
+  });
+  document.body.addEventListener("click", function() {
+    rightclicked_item = null;
+  });
+}
+
+jQuery(document).ready(function($){
+    // Определяем координаты верха блока навигации
+  	$h = $('.kkllkll').offset().top;
+	$(window).scroll(function(){
+        // Если прокрутили скролл ниже макушки блока, включаем фиксацию
+		if ( $(window).scrollTop() > $h) {
+        	$(".navbar").css({"position":"fixed", "top":0});
+        }else{
+            //Иначе возвращаем всё назад. Тут вы вносите свои данные
+        	$(".navbar").css({"position":"absolute", "top":"50px"});
+        }
+  });
+});
+
 // Initializing WOW.JS
 
  new WOW().init();
