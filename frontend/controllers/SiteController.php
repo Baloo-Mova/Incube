@@ -72,6 +72,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        echo"<p>ggwp</p>";
         return $this->render('index');
     }
 
