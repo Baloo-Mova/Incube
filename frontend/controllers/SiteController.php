@@ -12,7 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-
+use common\models\EconomicActivities;
 /**
  * Site controller
  */
@@ -72,7 +72,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     { 
-        return $this->render('index');
+       $economicActivities = EconomicActivities::find()->where(['pid'=>NULL])->all();
+             
+        return $this->render('index',[
+            'economicActivities' => $economicActivities,
+        ]);
     }
 
     /**
