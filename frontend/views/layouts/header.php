@@ -38,7 +38,8 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <?php Yii::$app->user->isGuest ? $this->render('//layouts/header_reg_buttons.php'):'' ?> 
+            
+            <?= Yii::$app->user->isGuest ? $this->render('//layouts/header_reg_buttons.php'):'' ?> 
 			  
               <ul class="main-nav nav navbar-nav navbar-center">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/site/index')?>">Головна</a></li>
@@ -47,9 +48,11 @@
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Професіоналу</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Про нас</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="#">Контакти</a></li> 
-                <?= Yii::$app->user->isGuest ? 'фыв':'<li class="wow fadeInDown" data-wow-delay="0.6s"><a href="'.\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/personal-area/index').'">ЛИЧНЫЙ КАБИНЕТ</a></li>' ?>
+                <?= Yii::$app->user->isGuest ? '':'<li class="wow fadeInDown" data-wow-delay="0.6s"><a href="'.\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/personal-area/index').'">ЛИЧНЫЙ КАБИНЕТ</a></li>' ?>
               </ul>
 			  
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
+
+ 
