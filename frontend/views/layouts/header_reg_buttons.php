@@ -6,8 +6,10 @@
  * and open the template in the editor.
  */
 ?>
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           
+            
               <div class="button navbar-right">
-                  <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.8s">Реєстрація</button>
-                  <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.6s">Вхід</button>
+                  <a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/site/signup')?>" class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.8s">Реєстрація</a>
+                  <a href="#" class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.6s">Вхід</a>
               </div>
+                
