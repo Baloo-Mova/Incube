@@ -71,10 +71,7 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {
-        echo"<p>ggwp</p>";
-        echo "123";
-        echo "1234";
+    { 
         return $this->render('index');
     }
 
@@ -91,7 +88,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect('site/check');
         } else {
             return $this->render('login', [
                 'model' => $model,
@@ -155,7 +152,7 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
+                    return $this->redirect('site/check');
                 }
             }
         }
@@ -163,6 +160,12 @@ class SiteController extends Controller
         return $this->render('signup', [
             'model' => $model,
         ]);
+    }
+    
+    public function actionCheck(){
+        
+        return $this->redirect('site/index');
+        
     }
 
     /**

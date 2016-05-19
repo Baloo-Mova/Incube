@@ -7,7 +7,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\Vacancy;
-use common\models\LoginForm;
+use common\models\AdminLoginForm;
 use yii\base\Model;
 
 /**
@@ -24,11 +24,11 @@ class SiteController extends Controller {
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'create', 'test', 'delpic'],
+                        'actions' => ['login', 'error'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'create', 'test', 'delpic'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -60,10 +60,10 @@ class SiteController extends Controller {
 
     public function actionLogin() {
         if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+            return $this->redirect('site/index');
         }
 
-        $model = new LoginForm();
+        $model = new AdminLoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {

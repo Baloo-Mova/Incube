@@ -5,6 +5,7 @@ $this->title = 'Incube';
 
 use common\models\FormOfferProject;
 ?>
+ <?= $this->render('//layouts/slider.php') ?> 
 <div class="content-area">
     <div class="container">
         <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
