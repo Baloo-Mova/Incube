@@ -42,20 +42,12 @@ $(document).ready(function() {
 
     $('.more-jobs a').click(function(e){
       e.preventDefault();
-       
       var $this = $(this);
       $this.toggleClass('more-jobs a');
-      
-      $this.html('<i class="fa fa-refresh"></i>');
       if($this.hasClass('more-jobs a')){
         $this.text('Менше');     
       } else {
-             
-             
-             
-                    //('<i class="fa fa-refresh"></i>');   
-       //<i class="fa fa-refresh"></i>';         
-        $this.text("Більше");
+        $this.text('Більше');
       }
     });
 
