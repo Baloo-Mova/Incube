@@ -167,9 +167,7 @@ class SiteController extends Controller
     }
     
     public function actionCheck(){
-        
-        return $this->redirect('site/index');
-        
+        return $this->redirect('site/index'); 
     }
 
     /**
