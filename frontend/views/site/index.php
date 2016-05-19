@@ -75,7 +75,7 @@ use common\models\FormOfferProject;
                                     <?= $key->project_cost;
                                     ?>
 
-                                </p></td><td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </p></td><td class="tbl-apply"><a href="#">Перейти</a></td>
                         </tr>
 
                     <?php }
@@ -86,7 +86,8 @@ use common\models\FormOfferProject;
                 </table>
             </div>
             <div class="more-jobs">
-                <a href=""> <i class="fa fa-refresh"></i>View more jobs</a>
+                
+                <a href="" id="logo">Більше</a>
             </div>
         </div>
         <div class="col-md-3 hidden-sm">
