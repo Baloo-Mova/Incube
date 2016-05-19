@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 <header class="main-header">
 
-    <?= Html::a('<span class="logo-mini"></span><span class="logo-lg">INCUBE</span>', '../site/index', ['class' => 'logo']) ?>
+    <?= Html::a('<span class="logo-mini"></span><span class="logo-lg">INCUBE</span>', \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/site/index'), ['class' => 'logo']) ?>
 
     <nav class="navbar navbar-static-top" role="navigation">
 

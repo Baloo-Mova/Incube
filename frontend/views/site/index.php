@@ -5,6 +5,7 @@ $this->title = 'Incube';
 
 use common\models\FormOfferProject;
 ?>
+ <?= $this->render('//layouts/slider.php') ?> 
 <div class="content-area">
     <div class="container">
         <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
@@ -142,17 +143,17 @@ use common\models\FormOfferProject;
     <div class="container">    
         <div class="row">
             
-             <?php 
+       <?php 
              
     
     
-    
+    $counter=1;
             foreach ($economicActivities as $key) { 
                 //if($key->pid==NULL){
                     ?>
            
             <a class="homeTile ng-isolate-scope" href="/explore/technology" ga-event-on="click" ga-event-category="Homepage" ga-event-action="Explore" ga-event-label="Technology">
-                <div class="homeTile-content" style="background-image: url('../img/employee1.png')">
+                <div class="homeTile-content" style="background-image: url('../img/eco_category/e<?= $counter ?>.png')">
                     <div class="homeTile-background"></div>
                     <div class="homeTile-icon">    <svg class=""><use xmlns:xlink="" xlink:href="#icon-icon-technology"></use></svg>
                     </div>
@@ -161,7 +162,9 @@ use common\models\FormOfferProject;
                     </div>
                 </div>
             </a>
-             <?php //}
+             <?php 
+            $counter++;
+//}
              }?> 
         </div>
 

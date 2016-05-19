@@ -33,7 +33,7 @@ AppAsset::register($this);
 
      <?= $this->render('//layouts/header.php') ?> 
     
-      <?= $this->render('//layouts/slider.php') ?> 
+     
     
     <div class="container">
               <?= Alert::widget() ?>
