@@ -75,7 +75,7 @@ use common\models\FormOfferProject;
                                     <?= $key->project_cost;
                                     ?>
 
-                                </p></td><td class="tbl-apply"><a href="#">Apply now</a></td>
+                                </p></td><td class="tbl-apply"><a href="#">Перейти</a></td>
                         </tr>
 
                     <?php }
@@ -86,7 +86,8 @@ use common\models\FormOfferProject;
                 </table>
             </div>
             <div class="more-jobs">
-                <a href=""> <i class="fa fa-refresh"></i>View more jobs</a>
+                
+                <a href="" id="logo">Більше</a>
             </div>
         </div>
         <div class="col-md-3 hidden-sm">
@@ -143,18 +144,29 @@ use common\models\FormOfferProject;
     <div class="container">    
         <div class="row">
             
-             <?php for ($ii = 1; $ii <= 12; $ii++) { ?>
+       <?php 
+             
+    
+    
+    $counter=1;
+            foreach ($economicActivities as $key) { 
+                //if($key->pid==NULL){
+                    ?>
+           
             <a class="homeTile ng-isolate-scope" href="/explore/technology" ga-event-on="click" ga-event-category="Homepage" ga-event-action="Explore" ga-event-label="Technology">
-                <div class="homeTile-content" style="background-image: url('../img/employee1.png')">
+                <div class="homeTile-content" style="background-image: url('../img/eco_category/e<?= $counter ?>.png')">
                     <div class="homeTile-background"></div>
                     <div class="homeTile-icon">    <svg class=""><use xmlns:xlink="" xlink:href="#icon-icon-technology"></use></svg>
                     </div>
                     <div class="homeTile-title">
-                        Tech
+                        <?= $key->name ?>
                     </div>
                 </div>
             </a>
-             <?php }?> 
+             <?php 
+            $counter++;
+//}
+             }?> 
         </div>
 
     </div>

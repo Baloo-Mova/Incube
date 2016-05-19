@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10.6
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Май 15 2016 г., 12:34
--- Версия сервера: 5.6.22-log
--- Версия PHP: 5.6.3
+-- Хост: 127.0.0.1
+-- Время создания: Май 19 2016 г., 08:05
+-- Версия сервера: 5.6.17
+-- Версия PHP: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,35 @@ SET time_zone = "+00:00";
 --
 -- База данных: `incube`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `adminuser`
+--
+
+CREATE TABLE IF NOT EXISTS `adminuser` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` smallint(6) NOT NULL DEFAULT '10',
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `password_reset_token` (`password_reset_token`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `adminuser`
+--
+
+INSERT INTO `adminuser` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'i-2pvsSsLU_2rstFwXlJyQqk-QGn8WGi', '$2y$13$9NNphE9jQM8ordbeavf7Xe/CYRdsH/fwdi2d7tZW4VE81Shrfc9qC', NULL, 'admin@gmail.cos', 10, 1463240103, 1463240103);
 
 -- --------------------------------------------------------
 
@@ -56,10 +85,10 @@ CREATE TABLE IF NOT EXISTS `char_in_pr` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Economic_Activities`
+-- Структура таблицы `economic_activities`
 --
 
-CREATE TABLE IF NOT EXISTS `Economic_Activities` (
+CREATE TABLE IF NOT EXISTS `economic_activities` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `pid` int(11) DEFAULT NULL,
@@ -69,10 +98,10 @@ CREATE TABLE IF NOT EXISTS `Economic_Activities` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
--- Дамп данных таблицы `Economic_Activities`
+-- Дамп данных таблицы `economic_activities`
 --
 
-INSERT INTO `Economic_Activities` (`id`, `name`, `pid`, `s_code`) VALUES
+INSERT INTO `economic_activities` (`id`, `name`, `pid`, `s_code`) VALUES
 (1, 'Сільське господарство, лісове господарство та рибне господарство', NULL, 'A'),
 (2, 'Сільське господарство, мисливство та надання пов''язаних із ними послуг', 1, '01'),
 (3, 'Лісове господарство та лісозаготівлі', 1, '02'),
@@ -190,9 +219,8 @@ CREATE TABLE IF NOT EXISTS `form_offer_project` (
 --
 
 INSERT INTO `form_offer_project` (`id`, `project_name`, `project_goal`, `project_aspects`, `adress`, `phone`, `email`, `web_site`, `incube_help`, `economic_activities`, `region`, `stage_work`, `project_cost`, `available_funding`, `country`, `date_b`, `date_e`, `files_folder`) VALUES
-(1, '', '', '', '', '', '', '', '', NULL, '', '', NULL, '', '', NULL, NULL, ''),
-(2, '2', '2', '2', '2', '2', '2', '2', '2', NULL, '2', '2', 2, '2', '2', '2016-05-10', '2016-05-26', ''),
-(3, '1', '1', '1', '1', '1', '1', '1', '1', NULL, '1', '1', 1, '1', '1', '2016-05-04', '2016-05-25', ''),
+(2, '2', '2', '2', '2', '2', '2', '2', '2', 3, '2', '2', 2, '2', '2', '2016-05-10', '2016-05-26', ''),
+(3, '1', '1', '1', '1', '1', '1', '1', '1', 1, '1', '1', 1, '1', '1', '2016-05-04', '2016-05-25', ''),
 (4, 'Влад рыболов', 'проэкт', 'фывофыов', 'ФЫввфыыв', '345345', 'вафв', 'ававы', 'фывфыв', 4, 'Запорожский', 'начальная', 322, '0', 'Украина', '2016-05-05', '2016-05-12', '');
 
 -- --------------------------------------------------------
@@ -289,10 +317,10 @@ CREATE TABLE IF NOT EXISTS `performer_project` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Person`
+-- Структура таблицы `person`
 --
 
-CREATE TABLE IF NOT EXISTS `Person` (
+CREATE TABLE IF NOT EXISTS `person` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `avatar` text NOT NULL,
@@ -301,10 +329,10 @@ CREATE TABLE IF NOT EXISTS `Person` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
--- Дамп данных таблицы `Person`
+-- Дамп данных таблицы `person`
 --
 
-INSERT INTO `Person` (`id`, `name`, `avatar`, `filename`) VALUES
+INSERT INTO `person` (`id`, `name`, `avatar`, `filename`) VALUES
 (1, '', 'vVeSZ1_I8AhsRkE_wJq6EPdqu-MpbpiN.JPG', 'IMG_6726.JPG'),
 (2, '', '6KhdWATKfs0ZjyqVrwc-2wTUt5HHRn3_.JPG', 'IMG_6763.JPG'),
 (3, '', 'yGMLvCEOjdTY4WmG9FBKl496kZZ-cMZu.JPG', 'IMG_6728.JPG'),
@@ -350,14 +378,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'i-2pvsSsLU_2rstFwXlJyQqk-QGn8WGi', '$2y$13$9NNphE9jQM8ordbeavf7Xe/CYRdsH/fwdi2d7tZW4VE81Shrfc9qC', NULL, 'admin@gmail.cos', 10, 1463240103, 1463240103);
+(2, 'user', 't3KiE6Msi4G9bjxX__me0GrY92YhJp-o', '$2y$13$2aV7j3vyU6nOhJ5PK1/5iO1aAOTOGswGjOaCjXJ1nZwR7y0TL0n3i', NULL, 'user@user.ru', 10, 1463622823, 1463622823);
 
 -- --------------------------------------------------------
 
@@ -390,10 +418,10 @@ ALTER TABLE `char_in_pr`
   ADD CONSTRAINT `char_in_pr_ibfk_1` FOREIGN KEY (`ipid`) REFERENCES `form_order_in_pr` (`id`);
 
 --
--- Ограничения внешнего ключа таблицы `Economic_Activities`
+-- Ограничения внешнего ключа таблицы `economic_activities`
 --
-ALTER TABLE `Economic_Activities`
-  ADD CONSTRAINT `economic_activities_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `Economic_Activities` (`id`);
+ALTER TABLE `economic_activities`
+  ADD CONSTRAINT `economic_activities_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `economic_activities` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `files_for_form_offer_project`
@@ -405,7 +433,7 @@ ALTER TABLE `files_for_form_offer_project`
 -- Ограничения внешнего ключа таблицы `form_offer_project`
 --
 ALTER TABLE `form_offer_project`
-  ADD CONSTRAINT `form_offer_project_ibfk_1` FOREIGN KEY (`economic_activities`) REFERENCES `Economic_Activities` (`id`);
+  ADD CONSTRAINT `form_offer_project_ibfk_1` FOREIGN KEY (`economic_activities`) REFERENCES `economic_activities` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `performer_project`
