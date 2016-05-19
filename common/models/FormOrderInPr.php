@@ -1,0 +1,107 @@
+<?php
+
+namespace common\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "form_order_in_pr".
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $in_direction
+ * @property string $patents
+ * @property string $date_b
+ * @property string $date_e
+ * @property string $cost_period
+ * @property string $key_perf_ind
+ * @property string $key_market
+ * @property integer $coast
+ * @property string $coast_direction
+ * @property string $tax_coast_direction
+ * @property string $info_spec
+ * @property string $rating_effective
+ * @property string $another_effects
+ *
+ * @property AnotherFilesInPr[] $anotherFilesInPrs
+ * @property CharInPr $charInPrs
+ * @property PerformerProject $performerProjects
+ */
+class FormOrderInPr extends \yii\db\ActiveRecord
+{
+    
+    /**
+     * @var UploadedFile[]
+     */
+    public $file;
+    
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'form_order_in_pr';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['patents', 'key_perf_ind', 'key_market', 'coast_direction', 'tax_coast_direction', 'info_spec', 'rating_effective', 'another_effects'], 'string'],
+            [['date_b', 'date_e'], 'safe'],
+            [['coast'], 'integer'],
+            [['name', 'in_direction', 'cost_period'], 'string', 'max' => 255],
+            [['file'],'file','maxFiles'=>'10'],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'name' => 'Name',
+            'in_direction' => 'In Direction',
+            'patents' => 'Patents',
+            'date_b' => 'Date B',
+            'date_e' => 'Date E',
+            'cost_period' => 'Cost Period',
+            'key_perf_ind' => 'Key Perf Ind',
+            'key_market' => 'Key Market',
+            'coast' => 'Coast',
+            'coast_direction' => 'Coast Direction',
+            'tax_coast_direction' => 'Tax Coast Direction',
+            'info_spec' => 'Info Spec',
+            'rating_effective' => 'Rating Effective',
+            'another_effects' => 'Another Effects',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAnotherFilesInPrs()
+    {
+        return $this->hasMany(AnotherFilesInPr::className(), ['in_pr_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCharInPrs()
+    {
+        return $this->hasOne(CharInPr::className(), ['ipid' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPerformerProjects()
+    {
+        return $this->hasOne(PerformerProject::className(), ['ipid' => 'id']);
+    }
+}
