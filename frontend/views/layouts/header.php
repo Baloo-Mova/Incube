@@ -48,7 +48,7 @@
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Професіоналу</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Про нас</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="#">Контакти</a></li> 
-                <?= Yii::$app->user->isGuest ? '':'<li class="wow fadeInDown" data-wow-delay="0.6s"><a href="'.\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/personal-area/index').'">Личный кабинет</a></li>' ?>
+                <?= Yii::$app->user->isGuest ? '':'<li class="wow fadeInDown " data-wow-delay="0.6s"><a href="'.\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/personal-area/index').'">Личный кабинет</a></li>' ?>
               </ul>
 			  
             </div><!-- /.navbar-collapse -->

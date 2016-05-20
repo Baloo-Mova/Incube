@@ -43,7 +43,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'logout' => ['get'],
                 ],
             ],
         ];
@@ -92,7 +92,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect('site/check');
+            return $this->redirect(\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/personal-area/index'));
         } else {
             return $this->render('login', [
                 'model' => $model,
@@ -109,7 +109,7 @@ class SiteController extends Controller
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        return $this->redirect('index');
     }
 
     /**
@@ -152,23 +152,21 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+       
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
-                    return $this->redirect('site/check');
+                    return $this->redirect(\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/personal-area/index'));
                 }
             }
-        }
-
+        } 
         return $this->render('signup', [
             'model' => $model,
         ]);
     }
     
-    public function actionCheck(){
-        return $this->redirect('site/index'); 
-    }
+    
 
     /**
      * Requests password reset.
