@@ -55,4 +55,17 @@ class SignupForm extends Model
         
         return $user->save() ? $user : null;
     }
+    public function attributeLabels()
+    {
+    return [
+            
+            'id' => 'ідентифікаційний номер',
+            'username' => 'Ім`я',
+            'email' => 'Пошта',
+            'created_at' => 'Дата створення',
+            'updated_at' => 'Дата оновлення',
+            'password' => 'Пароль',
+                      
+        ];
+    }
 }

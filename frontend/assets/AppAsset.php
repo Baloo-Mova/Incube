@@ -29,7 +29,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/vendor/modernizr-2.6.2.min.js',
-        //'js/vendor/jquery.min.js',
+        //'js/vendor/jquery-1.10.2.min.js',
         'js/bootstrap.min.js',
         'js/wow.js',
         'js/main.js',
@@ -38,6 +38,6 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-       // 'yii\bootstrap\BootstrapAsset',
+        //'yii\bootstrap\BootstrapAsset',
     ];
 }
