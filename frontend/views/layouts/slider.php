@@ -1,4 +1,4 @@
- <div class="slider-area">
+ <div class="slider-area container">
             <div class="slider">
                 <div id="bg-slider" class="owl-carousel owl-theme">
                  
