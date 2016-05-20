@@ -16,7 +16,7 @@ use yii\widgets\Pjax;
                 <li class="active"><a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/personal-area/index') ?>"><i class="fa fa-home"></i> Кабинет</a></li>
                 <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
                 <li><a href="#"><i class="fa fa-key"></i> Security</a></li>
-                <li><a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/logout') ?>" data-method="post"><i class="fa fa-sign-out"></i> Выход</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/logout') ?>"><i class="fa fa-sign-out"></i> Выход</a></li>
             </ul>
         </div>
         <div class="col-md-10">

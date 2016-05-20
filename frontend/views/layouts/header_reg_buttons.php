@@ -32,7 +32,7 @@ $model = new \frontend\models\SignupForm();
 
 
             <div class='modal-body panel-body'>
-                    <?php $form = ActiveForm::begin(['id' => 'form-signup','action'=>'site/signup']); ?>
+                    <?php $form = ActiveForm::begin(['id' => 'form-signup','action'=>\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/signup')]); ?>
                    
 
                     <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
