@@ -92,3 +92,8 @@ jQuery(document).ready(function($){
 // Initializing WOW.JS
 
  new WOW().init();
+
+
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
