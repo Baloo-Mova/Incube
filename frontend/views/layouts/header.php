@@ -47,8 +47,8 @@
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Інвестору</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Замовнику</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Проектанту</a></li>
-                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Фахівцю</a></li>
-                
+                <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Виконавцю</a></li>
+                <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="#">Контакти</a></li>
                 <?= Yii::$app->user->isGuest ? '':'<li class="wow fadeInDown" data-wow-delay="0.6s"><a href="'.\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/personal-area/index').'">ЛИЧНЫЙ КАБИНЕТ</a></li>' ?>
               </ul>
 			  

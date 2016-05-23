@@ -9,16 +9,16 @@ use common\models\FormOfferProject;
 <div class="content-area">
     <div class="container">
         <div class="row page-title text-center wow zoomInDown" data-wow-delay="1s">
-            <h5>Наші послуги</h5>
-            <h2>Як ми можемо вам допомогти</h2>
-            <p><p>Оберіть вашу роль</p>
+            
+            <h2>Оберіть вашу роль</h2>
+            
         </div>
         <div class="row how-it-work text-center">
             <div class="col-md-3">
                 <div class="single-work wow fadeInUp" data-wow-delay="0.8s">
                     <img src="../img/how-work3.png" alt="">
                     <h3>Замовник</h3>
-                    <p> Майбутній власник так користувач результатів іноваційного проекту</p>
+                    <p> Ставить питання, що потрібно вирішити</p>
                 </div>
             </div>
             <div class="col-md-3">
@@ -38,8 +38,8 @@ use common\models\FormOfferProject;
             <div class="col-md-3">
                 <div class="single-work wow fadeInUp"  data-wow-delay="1s">
                     <img src="../img/how-work2.png" alt="">
-                    <h3>Фахівець</h3>
-                    <p>Учасник(Реалізатор) іноваційного проекту, займає певну фахову роль у проекті</p>
+                    <h3>Виконавець</h3>
+                    <p>Фахівець певної галузі, який бажає взяти участь у проекті</p>
                 </div>
             </div>
         </div>

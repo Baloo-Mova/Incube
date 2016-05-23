@@ -17,6 +17,8 @@ $model = new \frontend\models\SignupForm();
     <a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/login') ?>" class="btn navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.6s">Вхід</a>
 </div>
 
+
+
 <div id="myModal" class="modal fade">
     
     <div class="modal-dialog">
@@ -32,7 +34,7 @@ $model = new \frontend\models\SignupForm();
 
 
             <div class='modal-body panel-body'>
-                    <?php $form = ActiveForm::begin(['id' => 'form-signup','action'=>'site/signup']); ?>
+                    <?php $form = ActiveForm::begin(['id' => 'form-signup','action'=>'signup']); ?>
                    
 
                     <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
@@ -42,11 +44,14 @@ $model = new \frontend\models\SignupForm();
                     <?= $form->field($model, 'password')->passwordInput() ?>
 
                     <div class="form-group center">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+                       
                     <?= Html::submitButton('Зареєструватися', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
                     </div>
 
-<?php ActiveForm::end(); ?>
+                    <?php ActiveForm::end(); ?>
+                    <!--<?php Yii::$app->view->render('@app/views/site/signup.php', ['model' => $model]); ?>-->
+                    
                           </div>   
         </div>
     </div>
