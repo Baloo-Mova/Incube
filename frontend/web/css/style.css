@@ -51,17 +51,19 @@ body{
     width: 100%;
 }
 .navbar-default .navbar-nav > li > a::after {
-    background-color: #00aeef;
-    bottom: -24px;
+  //  background-color: #00aeef;
+    //bottom: -24px;
     content: "";
     height: 5px;
     left: 0;
     position: absolute;
     transition: all 0.2s ease 0s;
     width: 0%;
+    border-bottom: #eb1478 3px solid;
 }
 .navbar-default .navbar-nav > li > a:hover:after {
     width: 100%;
+   
 }
 
 .navbar-nav.navbar-right:last-child{

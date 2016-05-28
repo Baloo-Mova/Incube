@@ -1,4 +1,7 @@
-   <div class="header-connect">
+  <div class="navbar-wrapper "><!--navbar-fixed-top-->
+    <div class="container-fluid">
+        
+        <div class="header-connect">
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 col-sm-8 col-xs-8">
@@ -12,7 +15,7 @@
                     <div class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-3  col-xs-offset-1">
                         <div class="header-half header-social">
                             <ul class="list-inline">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>z
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-vine"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -24,7 +27,8 @@
                 </div>
             </div>
         </div>
-       <nav class="navbar navbar-default">
+
+       <nav class="navbar navbar-default ">  <!--navbar-fixed-top-->
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -43,7 +47,16 @@
 			  
               <ul class="main-nav nav navbar-nav navbar-center">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/site/index')?>">Головна</a></li>
-	        <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="#">Проекти</a></li>
+	      <!--  <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="#">Проекти</a></li>-->
+                 <li class=" dropdown">
+                            <a href="#" class="dropdown-toggle wow fadeInDown" data-wow-delay="0s" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Проекти <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class=" dropdown">
+                                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View Departments</a>
+                                </li>
+                                <li><a href="#">Add New</a></li>
+                            </ul>
+                        </li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Інвестору</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Замовнику</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Проектанту</a></li>
@@ -56,4 +69,5 @@
           </div><!-- /.container-fluid -->
         </nav>
 
- 
+    </div>
+</div>
