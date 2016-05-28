@@ -14,25 +14,32 @@ use common\models\FormOfferProject;
             <p><p>Оберіть вашу роль</p>
         </div>
         <div class="row how-it-work text-center">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="single-work wow fadeInUp" data-wow-delay="0.8s">
-                    <img src="../img/how-work1.png" alt="">
-                    <h3>Подати проект</h3>
-                    <p> текст текст текст тект текст</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s">
                     <img src="../img/how-work3.png" alt="">
-                    <h3>Реалізація проекту</h3>
-                    <p>текст текст текст тект текст</p>
+                    <h3>Замовник</h3>
+                    <p> Майбутній власник так користувач результатів іноваційного проекту</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
+                <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s">
+                    <img src="../img/investor_desc_logo.png" alt="">
+                    <h3>Інвестор</h3>
+                    <p>Юридичні та фізичні особи, які можуть вкладувати кошти у інноваційний проект</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-work wow fadeInUp"  data-wow-delay="1s">
+                    <img src="../img/how-work1.png" alt="">
+                    <h3>Проектант</h3>
+                    <p>Розробник інноваційного проекту</p>
+                </div>
+            </div>
+            <div class="col-md-3">
                 <div class="single-work wow fadeInUp"  data-wow-delay="1s">
                     <img src="../img/how-work2.png" alt="">
-                    <h3>Подати резюме</h3>
-                    <p>текст текст текст текст текст</p>
+                    <h3>Фахівець</h3>
+                    <p>Учасник(Реалізатор) іноваційного проекту, займає певну фахову роль у проекті</p>
                 </div>
             </div>
         </div>
@@ -62,10 +69,11 @@ use common\models\FormOfferProject;
                                     $key->project_name;
                                     ?>
                                     <br><span class="job-type" style="overflow: hidden">
-                                        <?= $key->project_goal; ?>
+                                       <?= $key->economicActivities->name; ?>
                                     </span></h4></td>
                             <td><p>
-                                    <?= $key->economicActivities->name; ?>
+                                    <?= $key->project_goal; ?>
+                                    
 
                                 </p></td> 
                             <td><p><i class="icon-location"></i>
