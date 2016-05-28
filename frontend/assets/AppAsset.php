@@ -33,13 +33,11 @@ class AppAsset extends AssetBundle
         'js/bootstrap.min.js',
         'js/wow.js',
         'js/main.js',
-        'js/owl.carousel.min.js',
-        
-        'js/plugins.js',
-        
+        'js/owl.carousel.min.js', 
+        'js/plugins.js', 
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        //'yii\bootstrap\BootstrapAsset',
     ];
 }
