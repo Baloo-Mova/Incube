@@ -4,7 +4,7 @@
                  
                   <div class="item"><img src="../img/slider-image-3.jpg" alt="Mirror Edge"></div>
                   <!--<div class="item"><img src="../img/slider-image-2.jpg" alt="The Last of us"></div>-->
-                  <!--<div class="item"><img src="../img/slider-image-1.jpg" alt="Test slider3"></div>-->
+                  <div class="item"><img src="../img/slider-image-1.jpg" alt="Test slider3"></div>
                  
                 </div>
             </div> 

@@ -684,13 +684,4 @@ min-width: 480px) and (max-width: 767px){
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     }
     
-    .project-viewer-content{
-      height: 600px;
-      width: 100%;
-    }
-    .project-viewer-item{
-      margin-top: 5px;
-      height: 30px;
-      width: 100%;
-     background: red;
-    }
+    

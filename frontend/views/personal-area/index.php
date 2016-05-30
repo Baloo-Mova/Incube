@@ -13,25 +13,25 @@ use yii\widgets\Pjax;
     <div class="row well">
         <div class="col-md-2">
             <ul class="nav nav-pills nav-stacked well"> 
-                <li class="active"><a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/personal-area/index') ?>"><i class="fa fa-home"></i> Кабинет</a></li>
-                <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-                <li><a href="#"><i class="fa fa-key"></i> Security</a></li>
-                <li><a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/logout') ?>"><i class="fa fa-sign-out"></i> Выход</a></li>
+                <li class="active"><a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/personal-area/index') ?>"><i class="fa fa-home"></i> Кабінет</a></li>
+                <li><a href="#"><i class="fa fa-user"></i> Профіль</a></li>
+                <li><a href="#"><i class="fa fa-key"></i> Безпека</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/logout') ?>" class="btn btn-navbar login"><i class="fa fa-sign-out"></i> Вихід</a></li>
             </ul>
         </div>
         <div class="col-md-10">
             <div class="panel">
-                <img class="pic img-circle" src="http://placehold.it/120x120" alt="...">
-                <div class="name"><small>Apple K, India</small></div>
-                <a href="#" class="btn btn-xs btn-primary pull-right" style="margin:10px;"><span class="glyphicon glyphicon-picture"></span> Change cover</a>
+                <img class="pic img-circle" src="../img/man-profile.jpg" alt="...">
+                <div class="name"><small>Тест Володимир, Україна</small></div>
+                <a href="#" class="btn btn-xs btn-primary pull-right login" style="margin:10px;"><span class="glyphicon glyphicon-picture"></span> Змінити зображення</a>
             </div>
 
             <br><br><br>
             <ul class="nav nav-tabs" id="myTab">
-                <li class="active"><a href="#inbox" data-toggle="tab"><i class="fa fa-file-archive-o"></i> Заявки</a></li>
-          <!--      <li><a href="#sent" data-toggle="tab"><i class="fa fa-reply-all"></i> Sent</a></li>
-                <li><a href="#assignment" data-toggle="tab"><i class="fa fa-file-text-o"></i> Assignment</a></li>
-                <li><a href="#event" data-toggle="tab"><i class="fa fa-clock-o"></i> Event</a></li>-->
+                <li class="active"><a href="#inbox" data-toggle="tab"><i class="fa fa-reply-all"></i> Заявки</a></li>
+            <!--<li><a href="#sent" data-toggle="tab"><i class="fa fa-reply-all"></i> </a></li>
+            <li><a href="#assignment" data-toggle="tab"><i class="fa fa-file-text-o"></i> Assignment</a></li>-->
+            <li><a href="#event" data-toggle="tab"><i class="fa fa-clock-o"></i> Оповіщення</a></li>
             </ul>
 
             <div class="tab-content">
