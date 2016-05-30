@@ -19,7 +19,7 @@ class FormOfferProjectSearch extends FormOfferProject
     {
         return [
             [['id', 'economic_activities_id', 'project_cost'], 'integer'],
-            [['project_name', 'project_goal', 'project_aspects', 'adress', 'phone', 'email', 'web_site', 'incube_help', 'region', 'stage_work', 'available_funding', 'country', 'date_b', 'date_e','files_folder'], 'safe'],
+            [['project_name', 'project_goal', 'project_aspects', 'adress', 'phone', 'email', 'web_site', 'incube_help', 'region', 'stage_work', 'available_funding', 'country', 'date_b', 'date_e'], 'safe'],
         ];
     }
 
