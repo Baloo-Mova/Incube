@@ -90,7 +90,7 @@ use common\models\FormOfferProject;
                                         </div><!-- End Carousel Inner -->
                                     </div><!-- /.carousel -->
                                     <li class="divider"></li>
-                                    <li><a href="#">Усі проекти <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+                                    <li><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/project-viewer/index')?>">Усі проекти</a></li>
 
                                 </ul>
 
