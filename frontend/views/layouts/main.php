@@ -42,7 +42,7 @@ AppAsset::register($this);
    
     
     
-    
+    <br/>
      <?= $this->render('//layouts/footer.php') ?>    
 <?php $this->endBody() ?>
 </body>

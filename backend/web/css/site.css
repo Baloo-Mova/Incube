@@ -109,3 +109,6 @@ a.desc:after {
 .nav > li > form > button:hover {
     text-decoration: none;
 }
+.grid-view td {
+     white-space: normal; 
+}

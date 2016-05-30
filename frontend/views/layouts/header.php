@@ -81,9 +81,11 @@ use common\models\FormOfferProject;
 
                                             foreach ($new_orders as $i => $key1) {
                                                 ?>
-                                                <div class="item <?php if ($key1->id == 1) echo 'active'; ?>">
+                                                <div class="item  <?php if ($key1->id == 1) echo 'active'; ?>">
                                                     <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive" alt="product <?= $key1->id; ?>"></a>
-                                                    <h4><small><?= $key1->project_name; ?></small></h4>                                        
+                                                    <div class="layer">
+                                                    <h4><small><?= $key1->project_name; ?></small></h4>   
+                                                    </div>
                                                     <a class="btn navbar-btn nav-button login" type="button" href="###">Детальніше</a>       
                                                 </div><!-- End Item -->
                                             <?php } ?>                               
