@@ -9,6 +9,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 $model = new \frontend\models\SignupForm();
+
 use common\models\FormOfferProject;
 ?>
 
@@ -16,7 +17,7 @@ use common\models\FormOfferProject;
 
 <div class="navbar-fixed-top">
     <div class="header-connect">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-5 col-sm-8 col-xs-8">
                     <div class="header-half header-call">
@@ -55,90 +56,86 @@ use common\models\FormOfferProject;
                 </button>
                 <a class="navbar-brand" href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/index') ?>"><img src="../img/logo.png" alt=""></a>
             </div>
-            
-                <!-- Collect the nav links, forms, and other content for toggling -->
 
-<?= Yii::$app->user->isGuest ? $this->render('//layouts/header_reg_buttons.php') : '' ?> 
+            <!-- Collect the nav links, forms, and other content for toggling -->
 
-                <div class="collapse navbar-collapse js-navbar-collapse" id="bs-example-navbar-collapse-1">
+            <?= Yii::$app->user->isGuest ? $this->render('//layouts/header_reg_buttons.php') : '' ?> 
+
+            <div class="collapse navbar-collapse js-navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="main-nav nav navbar-nav navbar-center">
                     <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/index') ?>">Головна</a></li>
                     <!--  <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="#">Проекти</a></li>-->
                     <li class=" dropdown mega-dropdown">
                         <a href="#" class="dropdown-toggle wow fadeInDown" data-wow-delay="0s" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Проекти <span class="caret"></span></a>
                         <ul class="dropdown-menu mega-dropdown-menu">
-                           	<li class="col-sm-3">
-						<ul>
-							<li class="dropdown-header">Нові проекти</li>                            
-                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                              <div class="carousel-inner">
-                                 
-                                  <?php
-                    $new_orders = FormOfferProject::find()->orderBy([
-                                'rand()' => SORT_DESC,
-                            ])->limit(5)->all();
-                    
-                    foreach ($new_orders as $i => $key1) {
-                        ?>
-                                    <div class="item <?php if($key1->id==1) echo 'active';?>">
-                                    <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive" alt="product <?=$key1->id;?>"></a>
-                                    <h4><small><?=$key1->project_name;?></small></h4>                                        
-                                    <a class="btn navbar-btn nav-button login" type="button" href="###">Детальніше </a>       
-                                </div><!-- End Item -->
-                    <?php } ?>                               
-                              </div><!-- End Carousel Inner -->
-                            </div><!-- /.carousel -->
-                            <li class="divider"></li>
-                            <li><a href="#">Усі проекти <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-						</ul>
-					</li>
-					<li class="col-sm-3">
-						<ul>
-							<li class="dropdown-header">Dresses</li>
-							<li><a href="#">Unique Features</a></li>
-							<li><a href="#">Image Responsive</a></li>
-							<li><a href="#">Auto Carousel</a></li>
-							<li><a href="#">Newsletter Form</a></li>
-							<li><a href="#">Four columns</a></li>
-							<li class="divider"></li>
-							<li class="dropdown-header">Tops</li>
-							<li><a href="#">Good Typography</a></li>
-						</ul>
-					</li>
-					<li class="col-sm-3">
-						<ul>
-							<li class="dropdown-header">Jackets</li>
-							<li><a href="#">Easy to customize</a></li>
-							<li><a href="#">Glyphicons</a></li>
-							<li><a href="#">Pull Right Elements</a></li>
-							<li class="divider"></li>
-							<li class="dropdown-header">Pants</li>
-							<li><a href="#">Coloured Headers</a></li>
-							<li><a href="#">Primary Buttons & Default</a></li>
-							<li><a href="#">Calls to action</a></li>
-						</ul>
-					</li>
-					<li class="col-sm-3">
-						<ul>
-							<li class="dropdown-header">Accessories</li>
-							<li><a href="#">Default Navbar</a></li>
-							<li><a href="#">Lovely Fonts</a></li>
-							<li><a href="#">Responsive Dropdown </a></li>							
-							<li class="divider"></li>
-                            <li class="dropdown-header">Newsletter</li>
-                            <form class="form" role="form">
-                              <div class="form-group">
-                                <label class="sr-only" for="email">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email">                                                              
-                              </div>
-                              <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                            </form>                                                       
-						</ul>
-					</li>
-                            
+                            <li class="col-sm-2">
+                                <ul>
+                                    <li class="dropdown-header">Нові проекти</li>                            
+                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner">
+
+                                            <?php
+                                            $new_orders = FormOfferProject::find()->orderBy([
+                                                        'rand()' => SORT_DESC,
+                                                    ])->limit(5)->all();
+
+                                            foreach ($new_orders as $i => $key1) {
+                                                ?>
+                                                <div class="item <?php if ($key1->id == 1) echo 'active'; ?>">
+                                                    <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive" alt="product <?= $key1->id; ?>"></a>
+                                                    <h4><small><?= $key1->project_name; ?></small></h4>                                        
+                                                    <a class="btn navbar-btn nav-button login" type="button" href="###">Детальніше</a>       
+                                                </div><!-- End Item -->
+                                            <?php } ?>                               
+                                        </div><!-- End Carousel Inner -->
+                                    </div><!-- /.carousel -->
+                                    <li class="divider"></li>
+                                    <li><a href="#">Усі проекти <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li><a class="dropdown-header">Сільське господарство, лісове господарство та рибне господарство</a></li>
+                                    <li class="divider"></li>
+                                    <li><a class="dropdown-header">Переробна промисловість (Виробництво)</a></li>
+                                    <li class="divider"></li>
+                                    <li><a class="dropdown-header">Водопостачання, каналізація, поводження з відходами</a></li>
+                                    <li class="divider"></li>
+                                    <li><a class="dropdown-header">Будівництво</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li><a class="dropdown-header">Транспорт, складське господарство, поштова та кур'єрська діяльність</a></li>
+                                    <li class="divider"></li>
+                                    <li><a class="dropdown-header">Професійна, наукова та технічна діяльність</a></li>
+                                    <li class="divider"></li>
+                                    <li><a class="dropdown-header">Діяльність у сфері адміністративного та допоміжного обслуговування</a></li>
+                                    <li class="divider"></li>
+                                    <li><a class="dropdown-header">Державне управління й оборона, обов'язкове соціальне страхування</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li><a class="dropdown-header">Освіта</a></li>
+                                    <li class="divider"></li>
+                                    <li><a class="dropdown-header">Охорона здоров'я та надання соціальної допомоги</a></li>
+                                    <li class="divider"></li>
+                                    <li><a class="dropdown-header">Мистецтво, спорт, розваги та відпочинок</a></li>
+                                    <li class="divider"></li>
+                                    <li><a class="dropdown-header">Надання інших видів послуг (інші види діяльності) </a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </li>
+
                         </ul>
                     </li>
-                    
+
                     <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Інвестору</a></li>
                     <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Замовнику</a></li>
                     <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Проектанту</a></li>
@@ -147,7 +144,7 @@ use common\models\FormOfferProject;
 
                 </ul>
                 <div class="button navbar-right">
-                <?= Yii::$app->user->isGuest ? '' : '<a href="' . \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/personal-area/index') . '" class="btn navbar-btn nav-button wow bounceInRight login"><span class="glyphicon glyphicon-home"></span> Особистий кабінет</a>' ?>
+                    <?= Yii::$app->user->isGuest ? '' : '<a href="' . \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/personal-area/index') . '" class="btn navbar-btn nav-button wow bounceInRight login"><span class="glyphicon glyphicon-home"></span> Особистий кабінет</a>' ?>
                 </div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -168,22 +165,22 @@ use common\models\FormOfferProject;
 
 
             <div class='modal-body panel-body'>
-<?php $form = ActiveForm::begin(['id' => 'form-signup', 'action' => \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/signup')]); ?>
+                <?php $form = ActiveForm::begin(['id' => 'form-signup', 'action' => \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/signup')]); ?>
 
 
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
                 <?= $form->field($model, 'email') ?>
 
-<?= $form->field($model, 'password')->passwordInput() ?>
+                <?= $form->field($model, 'password')->passwordInput() ?>
 
                 <div class="form-group center">
 
-<?= Html::submitButton('Зареєструватися', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?= Html::submitButton('Зареєструватися', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
                 </div>
 
-<?php ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
                 <!--<?php Yii::$app->view->render('@app/views/site/signup.php', ['model' => $model]); ?>-->
 
             </div>   

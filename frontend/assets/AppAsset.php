@@ -17,6 +17,7 @@ class AppAsset extends AssetBundle
         'css/normalize.css',
         'css/fontello.css',
         'css/animate.css',
+        //'css/bootstrap-theme.css',
         'css/bootstrap.min.css',
         //'css/bootstrap-theme.css',
         'css/font-awesome.min.css',
