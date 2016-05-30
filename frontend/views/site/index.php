@@ -12,9 +12,8 @@ use common\models\FormOfferProject;
             <h2>Про нас</h2>
         </div>
         <div class="row how-it-work text-center">
-            <section style="">
-                <div class="container">
-                    <div class="row">
+           
+                
                         <div class="board">
                             <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
                             <div class="board-inner">
@@ -109,9 +108,8 @@ use common\models\FormOfferProject;
                             </div>
 
                         </div>
-                    </div>
-                </div>
-            </section>
+               
+            
 
 
         </div>
