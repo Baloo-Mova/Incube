@@ -2,15 +2,14 @@
 
 namespace frontend\controllers;
 
-use Yii;
-use common\models\FormOfferProject;
-use common\models\search\FormOfferProjectSearch;
+use Yii; 
+use common\models\search\FormApplicationForTheProjectSearch;
 
 class PersonalAreaController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-         $searchModel = new FormOfferProjectSearch();
+        $searchModel = new FormApplicationForTheProjectSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
