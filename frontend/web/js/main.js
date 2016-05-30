@@ -75,25 +75,8 @@ if (document.body) {
   });
 }
 
-jQuery(document).ready(function($){
-    // Определяем координаты верха блока навигации
-  	$h = $('.kkllkll').offset().top;
-	$(window).scroll(function(){
-        // Если прокрутили скролл ниже макушки блока, включаем фиксацию
-		if ( $(window).scrollTop() > $h) {
-        	$(".navbar").css({"position":"fixed", "top":0});
-        }else{
-            //Иначе возвращаем всё назад. Тут вы вносите свои данные
-        	$(".navbar").css({"position":"absolute", "top":"50px"});
-        }
-  });
-});
-
+ 
 // Initializing WOW.JS
 
  new WOW().init();
 
-
-	$(document).ready(function(){
-		$("#myModal").modal('show');
-	});

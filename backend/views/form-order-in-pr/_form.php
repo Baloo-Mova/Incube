@@ -15,11 +15,11 @@ use kartik\date\DatePicker;
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-    
+    <h4>Виконавець</h4>
     <?= $form->field($vik, 'name')->textInput() ?>
     
     <?= $form->field($vik, 'adress')->textInput() ?>
-    
+    <h4>Характеристика</h4>
     <?= $form->field($cha, 'name')->textInput() ?>
     <?= $form->field($cha, 'type')->textInput() ?>
     <?= $form->field($cha, 'st_level')->textInput() ?>

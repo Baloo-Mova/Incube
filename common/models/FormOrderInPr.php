@@ -22,14 +22,18 @@ use Yii;
  * @property string $info_spec
  * @property string $rating_effective
  * @property string $another_effects
+ * @property integer $publisher_id
+ * @property integer $economic_activities_id
+ * @property integer $status
  *
  * @property AnotherFilesInPr[] $anotherFilesInPrs
- * @property CharInPr $charInPrs
- * @property PerformerProject $performerProjects
+ * @property CharInPr $charInPr
+ * @property EconomicActivities $economicActivities
+ * @property User $publisher
+ * @property PerformerProject[] $performerProjects
  */
 class FormOrderInPr extends \yii\db\ActiveRecord
 {
-    
     /**
      * @var UploadedFile[]
      */
@@ -51,9 +55,11 @@ class FormOrderInPr extends \yii\db\ActiveRecord
         return [
             [['patents', 'key_perf_ind', 'key_market', 'coast_direction', 'tax_coast_direction', 'info_spec', 'rating_effective', 'another_effects'], 'string'],
             [['date_b', 'date_e'], 'safe'],
-            [['coast'], 'integer'],
+            [['coast', 'publisher_id', 'economic_activities_id', 'status'], 'integer'],
+            [['economic_activities_id'], 'required'],
             [['name', 'in_direction', 'cost_period'], 'string', 'max' => 255],
-            [['file'],'file','maxFiles'=>'10'],
+            [['economic_activities_id'], 'exist', 'skipOnError' => true, 'targetClass' => EconomicActivities::className(), 'targetAttribute' => ['economic_activities_id' => 'id']],
+            [['publisher_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['publisher_id' => 'id']],
         ];
     }
 
@@ -78,6 +84,9 @@ class FormOrderInPr extends \yii\db\ActiveRecord
             'info_spec' => 'Info Spec',
             'rating_effective' => 'Rating Effective',
             'another_effects' => 'Another Effects',
+            'publisher_id' => 'Publisher ID',
+            'economic_activities_id' => 'Economic Activities ID',
+            'status' => 'Status',
         ];
     }
 
@@ -92,7 +101,7 @@ class FormOrderInPr extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCharInPrs()
+    public function getCharInPr()
     {
         return $this->hasOne(CharInPr::className(), ['ipid' => 'id']);
     }
@@ -100,8 +109,24 @@ class FormOrderInPr extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getEconomicActivities()
+    {
+        return $this->hasOne(EconomicActivities::className(), ['id' => 'economic_activities_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPublisher()
+    {
+        return $this->hasOne(User::className(), ['id' => 'publisher_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getPerformerProjects()
     {
-        return $this->hasOne(PerformerProject::className(), ['ipid' => 'id']);
+        return $this->hasMany(PerformerProject::className(), ['ipid' => 'id']);
     }
 }

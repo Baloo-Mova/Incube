@@ -43,7 +43,7 @@
 			  
               <ul class="main-nav nav navbar-nav navbar-center">
                 <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/site/index')?>">Головна</a></li>
-	        <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="#">Проекти</a></li>
+	        <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/project-viewer/index')?>">Проекти</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Підприємцям</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Професіоналу</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Про нас</a></li>

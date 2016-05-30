@@ -16,7 +16,7 @@ use Yii;
  * @property string $email
  * @property string $web_site
  * @property string $incube_help
- * @property integer $economic_activities
+ * @property integer $economic_activities_id
  * @property string $region
  * @property string $stage_work
  * @property integer $project_cost
@@ -24,11 +24,11 @@ use Yii;
  * @property string $country
  * @property string $date_b
  * @property string $date_e
- * 
- * @property EconomicActivities $economicActivities
- * @property EconomicActivities[] $ids
+ * @property integer $publisher_id
+ * @property integer $status
+ *
  * @property FilesForFormOfferProject[] $filesForFormOfferProjects
- * @property EconomicActivities $economicActivities0
+ * @property EconomicActivities $economicActivities
  */
 class FormOfferProject extends \yii\db\ActiveRecord
 {
@@ -51,13 +51,12 @@ class FormOfferProject extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['project_goal', 'project_aspects', 'adress', 'incube_help','files_folder'], 'string'],
-            [['economic_activities', 'project_cost'], 'integer'],
+            [['project_goal', 'project_aspects', 'adress', 'incube_help'], 'string'],
+            [['economic_activities_id', 'project_cost', 'publisher_id', 'status'], 'integer'],
             [['date_b', 'date_e'], 'safe'],
             [['project_name', 'phone', 'email', 'web_site', 'region', 'stage_work', 'available_funding', 'country'], 'string', 'max' => 255],
-            [['economic_activities'], 'exist', 'skipOnError' => true, 'targetClass' => EconomicActivities::className(), 'targetAttribute' => ['economic_activities' => 'id']],
-            [['file'],'file','maxFiles'=>'10']
-            ];
+            [['economic_activities_id'], 'exist', 'skipOnError' => true, 'targetClass' => EconomicActivities::className(), 'targetAttribute' => ['economic_activities_id' => 'id']],
+        ];
     }
 
     /**
@@ -67,39 +66,25 @@ class FormOfferProject extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'project_name' => 'Назва проекту',
-            'project_goal' => 'Основна ідея проекту',
-            'project_aspects' => 'Інноваційні аспекти та переваги проекту',
-            'adress' => 'Адреса',
-            'phone' => 'Тел.',
+            'project_name' => 'Project Name',
+            'project_goal' => 'Project Goal',
+            'project_aspects' => 'Project Aspects',
+            'adress' => 'Adress',
+            'phone' => 'Phone',
             'email' => 'Email',
-            'web_site' => 'Web-Site',
-            'incube_help' => 'Як наша платформа може Вам допомогти',
-            'economic_activities' => 'Сфера діяльності',
-            'region' => 'Регіон',
-            'stage_work' => 'Стадія розробки',
-            'project_cost' => 'Загальна вартість проекту',
-            'available_funding' => 'Наявне фінансування',
-            'country' => 'Країна реєстрації проекту',
-            'date_b' => 'Дата початку виконання робіт',
-            'date_e' => 'Дата завершення інформаційних робіт',
+            'web_site' => 'Web Site',
+            'incube_help' => 'Incube Help',
+            'economic_activities_id' => 'Economic Activities ID',
+            'region' => 'Region',
+            'stage_work' => 'Stage Work',
+            'project_cost' => 'Project Cost',
+            'available_funding' => 'Available Funding',
+            'country' => 'Country',
+            'date_b' => 'Date B',
+            'date_e' => 'Date E',
+            'publisher_id' => 'Publisher ID',
+            'status' => 'Status',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEconomicActivities()
-    {
-        return $this->hasOne(EconomicActivities::className(), ['id' => 'economic_activities']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getIds()
-    {
-        return $this->hasMany(EconomicActivities::className(), ['pid' => 'id'])->viaTable('Economic_Activities', ['id' => 'economic_activities']);
     }
 
     /**
@@ -113,11 +98,8 @@ class FormOfferProject extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEconomicActivities0()
+    public function getEconomicActivities()
     {
-        return $this->hasOne(EconomicActivities::className(), ['id' => 'economic_activities']);
+        return $this->hasOne(EconomicActivities::className(), ['id' => 'economic_activities_id']);
     }
-    
-    
-   
 }

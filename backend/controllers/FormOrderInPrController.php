@@ -65,10 +65,10 @@ class FormOrderInPrController extends Controller
      */
     public function actionCreate()
     {
+        
         $model = new FormOrderInPr();
         $vikonavec = new PerformerProject();
-        $harakter = new CharInPr();
-        
+        $harakter = new CharInPr(); 
 
         if ($model->load(Yii::$app->request->post())&&$model->save()) {
             
@@ -76,6 +76,7 @@ class FormOrderInPrController extends Controller
             $model->file = UploadedFile::getInstances($model, 'file');
             
            $vikonavec->load(Yii::$app->request->post());
+           
            $vikonavec->ipid = $model->id;
            $vikonavec->save();
             
