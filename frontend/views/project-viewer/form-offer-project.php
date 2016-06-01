@@ -11,5 +11,13 @@ use kartik\select2\Select2;
 
 <div id="content" class="project-viewer-content">
      <?php    var_dump($model) ?>
+    
+
+    
+
+
+
+
 </div>
 
+<div style="height: 200px"></div>

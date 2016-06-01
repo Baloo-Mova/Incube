@@ -12,104 +12,109 @@ use common\models\FormOfferProject;
             <h2>Про нас</h2>
         </div>
         <div class="row how-it-work text-center">
-           
-                
-                        <div class="board">
-                            <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
-                            <div class="board-inner">
-                                <ul class="nav nav-tabs" id="myTab">
-                                    <div class="liner"></div>
-                                    <li class="active">
-                                        <a href="#home" data-toggle="tab" title="welcome">
-                                            <span class="round-tabs one">
-                                                <i class="glyphicon glyphicon-home"></i>
-                                            </span> 
-                                        </a></li>
 
-                                    <li><a href="#profile" data-toggle="tab" title="profile">
-                                            <span class="round-tabs two">
-                                                <i class="glyphicon glyphicon-user"></i>
-                                            </span> 
-                                        </a>
-                                    </li>
-                                    <li><a href="#messages" data-toggle="tab" title="bootsnipp goodies">
-                                            <span class="round-tabs three">
-                                                <i class="glyphicon glyphicon-gift"></i>
-                                            </span> </a>
-                                    </li>
 
-                                    <li><a href="#settings" data-toggle="tab" title="blah blah">
-                                            <span class="round-tabs four">
-                                                <i class="glyphicon glyphicon-comment"></i>
-                                            </span> 
-                                        </a></li>
+            <div class="board">
+                <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+                <div class="board-inner">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <div class="liner"></div>
+                        <li class="active">
+                            <a href="#home" data-toggle="tab" title="welcome">
+                                <span class="round-tabs one">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                </span> 
+                            </a></li>
 
-                                    <li><a href="#doner" data-toggle="tab" title="completed">
-                                            <span class="round-tabs five">
-                                                <i class="glyphicon glyphicon-ok"></i>
-                                            </span> </a>
-                                    </li>
+                        <li><a href="#profile" data-toggle="tab" title="profile">
+                                <span class="round-tabs two">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span> 
+                            </a>
+                        </li>
+                        <li><a href="#messages" data-toggle="tab" title="bootsnipp goodies">
+                                <span class="round-tabs three">
+                                    <i class="glyphicon glyphicon-list-alt"></i>
+                                </span> </a>
+                        </li>
 
-                                </ul></div>
+                        <li><a href="#settings" data-toggle="tab" title="blah blah">
+                                <span class="round-tabs four">
+                                    <i class="glyphicon glyphicon-comment"></i>
+                                </span> 
+                            </a></li>
 
-                            <div class="tab-content">
-                                <div class="tab-pane fade in active" id="home">
+                        <li><a href="#doner" data-toggle="tab" title="completed">
+                                <span class="round-tabs five">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </span> </a>
+                        </li>
 
-                                    <h3 class="head text-center">Welcome to Bootsnipp<sup>™</sup> <span style="color:#f48260;">♥</span></h3>
-                                    <p class="narrow text-center">
-                                        Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                                    </p>
+                    </ul></div>
 
-                                    <p class="text-center">
-                                        <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                                    </p>
-                                </div>
-                                <div class="tab-pane fade" id="profile">
-                                    <h3 class="head text-center">Create a Bootsnipp<sup>™</sup> Profile</h3>
-                                    <p class="narrow text-center">
-                                        Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                                    </p>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
 
-                                    <p class="text-center">
-                                        <a href="" class="btn btn-success btn-outline-rounded green"> create your profile <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                                    </p>
+                        <h3 class="head text-center">Вас вітає <span style="color:#f48260;"></span></h3>
+                        <h3 class="text-center">Відкрита регіональна платформа науково виробничого партнерства</h3>
+                        <h1 class="text-center"><span style='color: #D30072; font-weight: bold;'>In</span><span style="color:#00AEEF; font-weight: bold;">Cube</span></h1>
+                        	
+     
+                        <h4 class="narrow text-center">
+                            Дана платформа розрахована на реалізацію молодіжних наукових розробок, актуальних для промислових і сільськогосподарських підприємств Запорізького регіону.
+                            
+                        </h4>
 
-                                </div>
-                                <div class="tab-pane fade" id="messages">
-                                    <h3 class="head text-center">Bootsnipp goodies</h3>
-                                    <p class="narrow text-center">
-                                        Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                                    </p>
+                        <p class="text-center">
+                            <a href="" class="btn btn-success btn-outline-rounded green"> Детальніше <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="profile">
+                        <h3 class="head text-center">Зареєструйте свій аккаунт</h3>
+                        <h4 class="narrow text-center">
+                            Для того, щоб почати роботу - зареєструйтесь
+                        </h4>
 
-                                    <p class="text-center">
-                                        <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                                    </p>
-                                </div>
-                                <div class="tab-pane fade" id="settings">
-                                    <h3 class="head text-center">Drop comments!</h3>
-                                    <p class="narrow text-center">
-                                        Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                                    </p>
+                        <p class="text-center">
+                            <a href="../site/signup" class="btn btn-success btn-outline-rounded green"> Створити свій аккаунт <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                        </p>
 
-                                    <p class="text-center">
-                                        <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                                    </p>
-                                </div>
-                                <div class="tab-pane fade" id="doner">
-                                    <div class="text-center">
-                                        <i class="img-intro icon-checkmark-circle"></i>
-                                    </div>
-                                    <h3 class="head text-center">thanks for staying tuned! <span style="color:#f48260;">♥</span> Bootstrap</h3>
-                                    <p class="narrow text-center">
-                                        Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                                    </p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
+                    </div>
+                    <div class="tab-pane fade" id="messages">
+                        <h3 class="head text-center">Подайте свій проект</h3>
+                        <h4 class="narrow text-center">
+                            Розмістіть на платформі свій проект
+                        </h4>
 
+                        <p class="text-center">
+                            <a href="" class="btn btn-success btn-outline-rounded green"> Подати заявку <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="settings">
+                        <h3 class="head text-center">Слідкуйте за проектом</h3>
+                        <h4 class="narrow text-center">
+                            Для подальшого розвинення проекта спілкуйтесь з іншими учасниками платформи для отримання інвестицій, плану роботи, потрібних фахівців, тощо.
+                        </h4>
+
+                        <p class="text-center">
+                           <!-- <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>-->
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="doner">
+                        <div class="text-center">
+                            <i class="img-intro icon-checkmark-circle"></i>
                         </div>
-               
-            
+                        <h3 class="head text-center">Дякуємо</h3>
+                        <h4 class="narrow text-center">
+                            Дякуємо за те, що ви берете участь у роботі платформи.
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+
+
 
 
         </div>
@@ -156,15 +161,62 @@ use common\models\FormOfferProject;
     <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
         <h5>Дійсні проекти</h5>
         <h2><span><?= FormOfferProject::find()->count() ?></span> Проекти для вас</h2>
+        
     </div>
+    <?php
+    $tmp = FormOfferProject::find()->orderBy([
+    'rand()' => SORT_DESC,
+                           ])->limit(5)->all();
+    ?>
+    <!--
+    <div class="container">
+    <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="2500">
+       
+            <div class="carousel-inner">
+                <?php
+
+                    foreach ($tmp as $i => $key) {
+                        ?>
+            <div class="item <?php if($key->id==1) echo 'active'?>">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2><?=$key->project_name;?></h2>
+                            <h4><?= $key->economicActivities->name; ?></h4>
+                            <p class="text-left"><?= $key->project_goal; ?></p>
+                        </div>
+                    </div>
+                </div>            
+            </div> 
+                    <?php }?>
+        
+        </div>
+        
+        <div class="controls">
+            <ul class="nav">
+                <?php
+
+                    foreach ($tmp as $i => $key) {
+                        ?>
+                <li data-target="#custom_carousel" data-slide-to="<?=$key->id-1?>" class="<?php if($key->id==1) echo 'active'?>"><a href="#"><img src="http://placehold.it/50x50"><small><?=$key->project_name;?></small></a></li>
+                    <?php }?>
+                
+                
+            </ul>
+        </div>
+    </div>
+  
+</div>
+    
+    -->
+    
+    
     <div class="row jobs">
         <div class="col-md-9">
             <div class="job-posts table-responsive">
                 <table class="table">
                     <?php
-                    $tmp = FormOfferProject::find()->orderBy([
-                                'rand()' => SORT_DESC,
-                            ])->limit(5)->all();
 
                     foreach ($tmp as $i => $key) {
                         ?>
@@ -225,17 +277,17 @@ use common\models\FormOfferProject;
     <div class="i-tools-container">
         <div class="row">
 <?php for ($ii = 1; $ii <= 8; $ii++) { ?>
-                    <div class="i-tools-card ng-scope myBlock">
-                        <a href="##"></a>
-                        <div class="i-tools-logo center"> <img src="../img/job-logo5.png"></img>
-                            <hr>
-                            <h3> категорія 1</h3>
-                            <div>Опис катеогорії 1 </div>
+                        <div class="i-tools-card ng-scope myBlock">
+                            <a href="##"></a>
+                            <div class="i-tools-logo center"> <img src="../img/job-logo5.png"></img>
+                                <hr>
+                                <h3> категорія 1</h3>
+                                <div>Опис катеогорії 1 </div>
+                            </div>
+
+
+
                         </div>
-
-
-
-                    </div>
 
 <?php } ?>
 

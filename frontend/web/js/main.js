@@ -80,3 +80,13 @@ if (document.body) {
 
  new WOW().init();
 
+$(document).ready(function(ev){
+    $('#custom_carousel').on('slide.bs.carousel', function (evt) {
+      $('#custom_carousel .controls li.active').removeClass('active');
+      $('#custom_carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
+    });
+});
+$(document).ready(function() {
+    $('#list').click(function(event){event.preventDefault();$('#products .item').removeClass('grid-group-item');$('#products .item').addClass('list-group-item');});
+    $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+});
