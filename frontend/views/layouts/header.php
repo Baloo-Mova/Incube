@@ -23,7 +23,7 @@ use common\models\FormOfferProject;
                     <div class="header-half header-call">
                         <p>
                             <span><i class="icon-cloud"></i>+777 7777 7777</span>
-                            <span><i class="icon-mail"></i>incube_zp@gmail.com</span>
+                            <span><i class="icon-mail"></i>incube.zp@gmail.com</span>
                         </p>
                     </div>
                 </div>
@@ -63,10 +63,10 @@ use common\models\FormOfferProject;
 
             <div class="collapse navbar-collapse js-navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="main-nav nav navbar-nav navbar-center">
-                    <li class="wow fadeInDown" data-wow-delay="0s"><a class="active" href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/index') ?>">Головна</a></li>
+                    <li class="wow fadeInDown" data-wow-delay="0s"><a class="<?php if( \yii\helpers\Url::to('')=='/frontend/web/site/index'){  echo "active";}?>" href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/index') ?>">Головна</a></li>
                     <!--  <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="#">Проекти</a></li>-->
                     <li class=" dropdown mega-dropdown">
-                        <a href="#" class="dropdown-toggle wow fadeInDown" data-wow-delay="0s" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Проекти <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle wow fadeInDown <?php if( \yii\helpers\Url::to('')=='/frontend/web/project-viewer/index'){  echo "active";}?>" data-wow-delay="0s" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Проекти <span class="caret"></span></a>
                         <ul class="dropdown-menu mega-dropdown-menu">
                             <li class="col-sm-2">
                                 <ul>

@@ -168,22 +168,26 @@ use common\models\FormOfferProject;
     'rand()' => SORT_DESC,
                            ])->limit(5)->all();
     ?>
-    <!--
-    <div class="container">
-    <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="2500">
+   
+    
+    <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="999999999">
        
             <div class="carousel-inner">
                 <?php
 
                     foreach ($tmp as $i => $key) {
                         ?>
-            <div class="item <?php if($key->id==1) echo 'active'?>">
+            <div class="item <?php if($key->id-1==0) echo 'active'?>">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive"></div>
+                        <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive">
+                        
+                        </div>
                         <div class="col-md-9">
-                            <h2><?=$key->project_name;?></h2>
-                            <h4><?= $key->economicActivities->name; ?></h4>
+                            <h3 class="text-center"><a href="#" class=""><?=$key->project_name;?></a></h3>
+                            <hr/>
+                            <h4 class="text-center"><?= $key->economicActivities->name; ?></h4>
+                            <hr/>
                             <p class="text-left"><?= $key->project_goal; ?></p>
                         </div>
                     </div>
@@ -199,7 +203,7 @@ use common\models\FormOfferProject;
 
                     foreach ($tmp as $i => $key) {
                         ?>
-                <li data-target="#custom_carousel" data-slide-to="<?=$key->id-1?>" class="<?php if($key->id==1) echo 'active'?>"><a href="#"><img src="http://placehold.it/50x50"><small><?=$key->project_name;?></small></a></li>
+                <li data-target="#custom_carousel" data-slide-to="<?=$key->id-1?>" class="<?php if($key->id-1==0) echo 'active'?>"><a href="#"><img src="http://placehold.it/50x50"><small><?=$key->project_name;?></small></a></li>
                     <?php }?>
                 
                 
@@ -207,9 +211,9 @@ use common\models\FormOfferProject;
         </div>
     </div>
   
-</div>
+
     
-    -->
+    
     
     
     <div class="row jobs">

@@ -53,7 +53,7 @@ class ProjectViewerController extends \yii\web\Controller {
                         <spa>
                               " . $key->project_goal . "
                         </spa>
-                        </div
+                        </div>
                     </div>";
             }
 

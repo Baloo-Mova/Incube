@@ -775,7 +775,7 @@ body {
     text-decoration: none;
     color: #000;
     background-color: #00aeef;
-    border-bottom: #eb1478 3px solid;
+    //border-bottom: #eb1478 3px solid;
 }
 .mega-dropdown-menu .dropdown-header {
 
@@ -1089,8 +1089,10 @@ left: 35%;
 #custom_carousel .item {
 
     color:#000;
-    background-color:#eee;
+    background-color:#dbf3ff;
     padding:20px 0;
+    min-height: 300px;
+    max-height: 300px;
 }
 #custom_carousel .controls{
     overflow-x: auto;
@@ -1105,15 +1107,46 @@ left: 35%;
 #custom_carousel .controls li {
     display: table-cell;
     width: 1%;
-    max-width:90px
+    max-width:90px;
+    background-color: #D10072; 
+    border-right: 1px solid #dbf3ff;
 }
 #custom_carousel .controls li.active {
-    background-color:#eee;
+    color: #fff;
+    background-color:#01AEEF;
     border-top:3px solid #01AEEF;
+    
+}
+#custom_carousel .controls li.active > a {
+    color: #fff;
+    background-color:#0090C5;
+    border-top:3px solid #01AEEF;
+    
+}
+#custom_carousel .controls li > a {
+    background-color: #B4E6FF;
 }
 #custom_carousel .controls li.hover {
-    background-color:#5cb85c;
+    background-color: #0486B7;
     border-top:3px solid #01AEEF;
+}
+#custom_carousel .nav> li> a {
+   -webkit-transition: all 0.1s ease-in-out;
+   -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    
+}
+#custom_carousel .nav> li> a:hover {
+    background-color: #00AEEF;
+    color: #fff;
+  
+}
+#custom_carousel .nav> li> a.active {
+    background-color: #00AEEF;
+    color: #fff;
+  
 }
 #custom_carousel .controls a small {
     overflow:hidden;
@@ -1122,8 +1155,22 @@ left: 35%;
     margin-top:5px;
     font-weight:bold
 }
+#custom_carousel h3 > a {
 
+    color:#00aeef;
+    
+}
 
+#custom_carousel .col-md-9 {
+     overflow: auto;
+    height: 250px;
+    
+    
+}
+#custom_carousel hr{
+        border-top: 2px solid #00aeef;
+    
+}
 //Grid or list projects type
 
 .glyphicon { margin-right:5px; }
@@ -1142,6 +1189,11 @@ left: 35%;
     width: 100%;
     background-color: #fff;
     margin-bottom: 10px;
+        -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 .item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
 {
@@ -1179,6 +1231,11 @@ left: 35%;
 {
     clear: both;
 }
+.item .list-group-item-text {
+   height: 55px;
+   overflow: auto;
+}
+
 .grid-group-item .list-group-item-text
 {
     overflow:auto;
@@ -1199,6 +1256,11 @@ left: 35%;
 
 .item .list-group-item-heading > a{
     color:#00aeef
+}
+.item .list-group-item-heading{
+    text-align: center;
+    
+    
 }
 .item .list-group-image{
     width: 400px;
