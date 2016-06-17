@@ -159,7 +159,7 @@ use common\models\FormOfferProject;
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">x</button>
                 <div class="row-fluid user-row">
-                    <img src="http://s11.postimg.org/7kzgji28v/logo_sm_2_mr_1.png" class="img-responsive" alt="Conxole Admin"/>
+                    <img src="../img/logo.png" class="img-responsive" alt="log"/>
                 </div>
                 <h3 style="text-align: center;">Реєстрація</h3> 
             </div>

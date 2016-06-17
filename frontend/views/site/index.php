@@ -165,22 +165,22 @@ use common\models\FormOfferProject;
     </div>
     <?php
     $tmp = FormOfferProject::find()->orderBy([
-    'rand()' => SORT_DESC,
+    'id' => SORT_ASC,
                            ])->limit(5)->all();
     ?>
    
     
-    <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="999999999">
+    <div id="custom_carousel" class="carousel slide odd wow fadeInUp" data-wow-delay="1s" data-ride="carousel" data-interval="9999999999999">
        
             <div class="carousel-inner">
                 <?php
 
                     foreach ($tmp as $i => $key) {
                         ?>
-            <div class="item <?php if($key->id-1==0) echo 'active'?>">
+            <div class="item <?php if($key->id-1==0) echo 'active';?>">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-3"><img src="http://placehold.it/350x250" class="img-responsive">
+                        <div class="col-md-3"><img src="../img/projects_img/<?= $key->id ?>.jpg" class="img-responsive">   <!--http://placehold.it/350x250-->
                         
                         </div>
                         <div class="col-md-9">
@@ -200,10 +200,10 @@ use common\models\FormOfferProject;
         <div class="controls">
             <ul class="nav">
                 <?php
-
+                     
                     foreach ($tmp as $i => $key) {
                         ?>
-                <li data-target="#custom_carousel" data-slide-to="<?=$key->id-1?>" class="<?php if($key->id-1==0) echo 'active'?>"><a href="#"><img src="http://placehold.it/50x50"><small><?=$key->project_name;?></small></a></li>
+                <li data-target="#custom_carousel" data-slide-to="<?=$key->id-1?>" class="<?php if($key->id-1==0) echo 'active';?>"><a href="#"><img src="http://placehold.it/50x50"><small><?=$key->project_name;?></small></a></li>
                     <?php }?>
                 
                 
@@ -215,7 +215,7 @@ use common\models\FormOfferProject;
     
     
     
-    
+    <!--
     <div class="row jobs">
         <div class="col-md-9">
             <div class="job-posts table-responsive">
@@ -267,6 +267,7 @@ use common\models\FormOfferProject;
             </div>
         </div>
     </div>
+    -->
 </div>
 <hr>  
 
@@ -310,7 +311,7 @@ use common\models\FormOfferProject;
 
 
 
-    <div class="container">    
+    <div class="container odd wow fadeInLeft" data-wow-delay="1s">    
         <div class="row">
 
             <?php
