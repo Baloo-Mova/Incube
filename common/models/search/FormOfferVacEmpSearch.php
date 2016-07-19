@@ -19,7 +19,7 @@ class FormOfferVacEmpSearch extends FormOfferVacEmp
     {
         return [
             [['id'], 'integer'],
-            [['name_org', 'info_org', 'info_org_s', 'type_org', 'sector_org', 'adress', 'phone', 'email', 'web_site'], 'safe'],
+            [['name_org', 'info_org', 'info_org_s', 'type_org', 'economic_activities_id', 'adress', 'phone', 'email', 'web_site'], 'safe'],
         ];
     }
 
@@ -60,13 +60,13 @@ class FormOfferVacEmpSearch extends FormOfferVacEmp
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'economic_activities_id'=> $this->economic_activities_id,
         ]);
 
         $query->andFilterWhere(['like', 'name_org', $this->name_org])
             ->andFilterWhere(['like', 'info_org', $this->info_org])
             ->andFilterWhere(['like', 'info_org_s', $this->info_org_s])
-            ->andFilterWhere(['like', 'type_org', $this->type_org])
-            ->andFilterWhere(['like', 'sector_org', $this->sector_org])
+            ->andFilterWhere(['like', 'type_org', $this->type_org]) 
             ->andFilterWhere(['like', 'adress', $this->adress])
             ->andFilterWhere(['like', 'phone', $this->phone])
             ->andFilterWhere(['like', 'email', $this->email])

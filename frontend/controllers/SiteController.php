@@ -71,8 +71,8 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    { 
-       $economicActivities = EconomicActivities::find()->where(['pid'=>NULL])->all();
+    {  
+        $economicActivities = EconomicActivities::find()->where(['pid'=>NULL])->all();
              
         return $this->render('index',[
             'economicActivities' => $economicActivities,
