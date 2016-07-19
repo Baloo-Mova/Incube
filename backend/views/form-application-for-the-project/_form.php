@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\FormApplicationForTheProject */
@@ -47,6 +49,15 @@ use kartik\date\DatePicker;
 
     <?= $form->field($model, 'project_info')->textarea(['rows' => 6]) ?>
 
+    <?= $form->field($model, 'economic_activities_id')->widget(Select2::classname(), [
+                    'data' => ArrayHelper::map(common\models\EconomicActivities::find()->all(), 'id', 'name'),
+                    'language' => 'ru',
+                    'options' => ['placeholder' => 'Оберіть'],
+                    'pluginOptions' => [
+                        'allowClear' => true
+                    ],
+                ])
+    ?>
     
 
     <div class="form-group">

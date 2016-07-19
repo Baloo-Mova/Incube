@@ -58,11 +58,11 @@ use common\models\FormOfferProject;
                         <h3 class="head text-center">Вас вітає <span style="color:#f48260;"></span></h3>
                         <h3 class="text-center">Відкрита регіональна платформа науково виробничого партнерства</h3>
                         <h1 class="text-center"><span style='color: #D30072; font-weight: bold;'>In</span><span style="color:#00AEEF; font-weight: bold;">Cube</span></h1>
-                        	
-     
+
+
                         <h4 class="narrow text-center">
                             Дана платформа розрахована на реалізацію молодіжних наукових розробок, актуальних для промислових і сільськогосподарських підприємств Запорізького регіону.
-                            
+
                         </h4>
 
                         <p class="text-center">
@@ -125,13 +125,15 @@ use common\models\FormOfferProject;
             <h2>Оберіть вашу роль</h2>
         </div>
         <div class="row how-it-work text-center">
-            <div class="col-md-3">
-                <div class="single-work wow fadeInUp" data-wow-delay="0.8s">
-                    <img src="../img/how-work3.png" alt="">
-                    <h3>Замовник</h3>
-                    <p>Подає питання, що потрібно вирішити</p>
+            <a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/customer/index') ?>">
+                <div class="col-md-3">
+                    <div class="single-work wow fadeInUp" data-wow-delay="0.8s">
+                        <img src="../img/how-work3.png" alt="">
+                        <h3>Замовник</h3>
+                        <p>Подає питання, що потрібно вирішити</p>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="col-md-3">
                 <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s">
                     <img src="../img/investor_desc_logo.png" alt="">
@@ -161,146 +163,55 @@ use common\models\FormOfferProject;
     <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
         <h5>Дійсні проекти</h5>
         <h2><span><?= FormOfferProject::find()->count() ?></span> Проекти для вас</h2>
-        
+
     </div>
     <?php
     $tmp = FormOfferProject::find()->orderBy([
-    'id' => SORT_ASC,
-                           ])->limit(5)->all();
+                'id' => SORT_ASC,
+            ])->limit(5)->all();
     ?>
-   
-    
-    <div id="custom_carousel" class="carousel slide odd wow fadeInUp" data-wow-delay="1s" data-ride="carousel" data-interval="9999999999999">
-       
-            <div class="carousel-inner">
-                <?php
 
-                    foreach ($tmp as $i => $key) {
-                        ?>
-            <div class="item <?php if($key->id-1==0) echo 'active';?>">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-3"><img src="../img/projects_img/<?= $key->id ?>.jpg" class="img-responsive">   <!--http://placehold.it/350x250-->
-                        
+
+    <div id="custom_carousel" class="carousel slide odd wow fadeInUp" data-wow-delay="1s" data-ride="carousel" data-interval="9999999999999">
+
+        <div class="carousel-inner">
+            <?php
+            foreach ($tmp as $i => $key) {
+                ?>
+                <div class="item <?php if ($key->id - 1 == 0) echo 'active'; ?>">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3"><img src="../img/projects_img/<?= $key->id ?>.jpg" class="img-responsive">   <!--http://placehold.it/350x250-->
+
+                            </div>
+                            <div class="col-md-9">
+                                <h3 class="text-center"><a href="#" class=""><?= $key->project_name; ?></a></h3>
+                                <hr/>
+                                <h4 class="text-center"><?= $key->economicActivities->name; ?></h4>
+                                <hr/>
+                                <p class="text-left"><?= $key->project_goal; ?></p>
+                            </div>
                         </div>
-                        <div class="col-md-9">
-                            <h3 class="text-center"><a href="#" class=""><?=$key->project_name;?></a></h3>
-                            <hr/>
-                            <h4 class="text-center"><?= $key->economicActivities->name; ?></h4>
-                            <hr/>
-                            <p class="text-left"><?= $key->project_goal; ?></p>
-                        </div>
-                    </div>
-                </div>            
-            </div> 
-                    <?php }?>
-        
+                    </div>            
+                </div> 
+            <?php } ?>
+
         </div>
-        
+
         <div class="controls">
             <ul class="nav">
                 <?php
-                     
-                    foreach ($tmp as $i => $key) {
-                        ?>
-                <li data-target="#custom_carousel" data-slide-to="<?=$key->id-1?>" class="<?php if($key->id-1==0) echo 'active';?>"><a href="#"><img src="http://placehold.it/50x50"><small><?=$key->project_name;?></small></a></li>
-                    <?php }?>
-                
-                
+                foreach ($tmp as $i => $key) {
+                    ?>
+                    <li data-target="#custom_carousel" data-slide-to="<?= $key->id - 1 ?>" class="<?php if ($key->id - 1 == 0) echo 'active'; ?>"><a href="#"><img src="http://placehold.it/50x50"><small><?= $key->project_name; ?></small></a></li>
+                <?php } ?>
+
+
             </ul>
         </div>
     </div>
-  
 
-    
-    
-    
-    <!--
-    <div class="row jobs">
-        <div class="col-md-9">
-            <div class="job-posts table-responsive">
-                <table class="table">
-                    <?php
-
-                    foreach ($tmp as $i => $key) {
-                        ?>
-                        <tr class="odd wow fadeInUp" data-wow-delay="1s">
-                            <td class="tbl-logo"><img src="../img/job-logo1.png" alt=""></td>
-                            <td class="tbl-title"><h4>
-                                    <?=
-                                    $key->project_name;
-                                    ?>
-                                    <br><span class="job-type" style="overflow: hidden">
-                                        <?= $key->economicActivities->name; ?>
-                                    </span></h4></td>
-                            <td><p>
-                                    <?= $key->project_goal; ?>
-
-
-                                </p></td> 
-                            <td><p><i class="icon-location"></i>
-                                    <?= $key->country ?>
-                                </p></td>
-                            <td><p>&dollar;
-                                    <?= $key->project_cost;
-                                    ?>
-
-                                </p></td><td class="tbl-apply"><a href="#">Перейти</a></td>
-                        </tr>
-
-                    <?php }
-                    ?>
-
-
-
-                </table>
-            </div>
-            <div class="more-jobs">
-
-                <a href="" id="logo">Більше</a>
-            </div>
-        </div>
-        <div class="col-md-3 hidden-sm">
-            <div class="job-add wow fadeInRight" data-wow-delay="1.5s">
-                <h2 style="background-image: url(../img/job-add.png); font-size:20px"></h2>
-                <a href="">Створити аккаунт</a>
-            </div>
-        </div>
-    </div>
-    -->
-</div>
-<hr>  
-
-<!--<div class="i-tools">
-
-    <div class="row page-title text-center wow bounce animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: bounce;">
-        <h5>Оберіть потрібну категорію</h5>
-        <h2>Дійсні категорії</h2>
-    </div>
-
-
-    <div class="i-tools-container">
-        <div class="row">
-<?php for ($ii = 1; $ii <= 8; $ii++) { ?>
-                        <div class="i-tools-card ng-scope myBlock">
-                            <a href="##"></a>
-                            <div class="i-tools-logo center"> <img src="../img/job-logo5.png"></img>
-                                <hr>
-                                <h3> категорія 1</h3>
-                                <div>Опис катеогорії 1 </div>
-                            </div>
-
-
-
-                        </div>
-
-<?php } ?>
-
-
-        </div>
-    </div>
-</div>        
-<hr>-->
+ 
 <div class="homeSection-categories homeSection-subSection">
 
 
@@ -314,11 +225,11 @@ use common\models\FormOfferProject;
     <div class="container odd wow fadeInLeft" data-wow-delay="1s">    
         <div class="row">
 
-            <?php
-            $counter = 1;
-            foreach ($economicActivities as $key) {
-                //if($key->pid==NULL){
-                ?>
+<?php
+$counter = 1;
+foreach ($economicActivities as $key) {
+    //if($key->pid==NULL){
+    ?>
 
                 <a class="homeTile ng-isolate-scope" href="/explore/technology" ga-event-on="click" ga-event-category="Homepage" ga-event-action="Explore" ga-event-label="Technology">
                     <div class="homeTile-content" style="background-image: url('../img/eco_category/e<?= $counter ?>.png')">
@@ -326,15 +237,15 @@ use common\models\FormOfferProject;
                         <div class="homeTile-icon">    <svg class=""><use xmlns:xlink="" xlink:href="#icon-icon-technology"></use></svg>
                         </div>
                         <div class="homeTile-title">
-                            <?= $key->name ?>
+    <?= $key->name ?>
                         </div>
                     </div>
                 </a>
-                <?php
-                $counter++;
+    <?php
+    $counter++;
 //}
-            }
-            ?> 
+}
+?> 
         </div>
 
     </div>
