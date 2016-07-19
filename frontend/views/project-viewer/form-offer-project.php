@@ -37,7 +37,7 @@ use common\models\EconomicActivities;
             </center>
         </div>
 
-        <div class="container service1-items col-sm-2 col-md-2 pull-left">
+        <!--<div class="container service1-items col-sm-2 col-md-2 pull-left">
             <center>
                 <a id="item-1" class="service1-item">
                     <img src="../img/projects_img/<?= $model["id"] ?>.jpg" alt=""></img>
@@ -49,7 +49,7 @@ use common\models\EconomicActivities;
                     <img src="../img/projects_img/<?= $model["id"] ?>.jpg" alt=""></img>
                 </a>
             </center>
-        </div>
+        </div>-->
 
         <div class="container col-md-12">
             
