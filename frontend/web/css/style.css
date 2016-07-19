@@ -890,6 +890,16 @@ a {
     background-color: #008dc1;
     border-color: #0081b2;
 }
+.btn-danger {
+    color: #fff;
+    background-color: #D10072;
+    border-color: #800046;
+}
+.btn-danger:hover {
+    color: #fff;
+    background-color: #BF0068;
+    border-color: #800046;
+}
 
 .board{
     //width: 100%;
