@@ -94,21 +94,7 @@
                     <i class="fa fa-file"></i> <span> Форма бланку-заявки<br/> інноваційного проекту</span>
                 </a>
             </li>
-             <li>
-                <a href="<?= \yii\helpers\Url::to('../form-order-in-pr/index') ?>" id="cleanComand">
-                    <i class="fa fa-file"></i> <span> Користувачі<br/></span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= \yii\helpers\Url::to('../form-order-in-pr/index') ?>" id="cleanComand">
-                    <i class="fa fa-file"></i> <span> Види економічної<br/> діяльності</span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= \yii\helpers\Url::to('../form-order-in-pr/index') ?>" id="cleanComand">
-                    <i class="fa fa-file"></i> <span> Інше</span> <span class="caret"></span>
-                </a>
-            </li>
+             
         </ul>
 
     </section>
