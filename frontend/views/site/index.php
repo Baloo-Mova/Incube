@@ -14,8 +14,7 @@ use common\models\FormOfferProject;
         <div class="row how-it-work text-center">
 
 
-            <div class="board">
-                <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+            <div class="board"> 
                 <div class="board-inner">
                     <ul class="nav nav-tabs" id="myTab">
                         <div class="liner"></div>
@@ -66,7 +65,7 @@ use common\models\FormOfferProject;
                         </h4>
 
                         <p class="text-center">
-                            <a href="" class="btn btn-success btn-outline-rounded green"> Детальніше <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                            <a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/about')?>" class="btn btn-success btn-outline-rounded green"> Детальніше <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
                         </p>
                     </div>
                     <div class="tab-pane fade" id="profile">
@@ -134,6 +133,7 @@ use common\models\FormOfferProject;
                     </div>
                 </div>
             </a>
+            <a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/investor/index') ?>">
             <div class="col-md-3">
                 <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s">
                     <img src="../img/investor_desc_logo.png" alt="">
@@ -141,6 +141,8 @@ use common\models\FormOfferProject;
                     <p>Юридичні та фізичні особи, які можуть вкладувати кошти у інноваційний проект</p>
                 </div>
             </div>
+            </a>
+            <a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/designer/index') ?>">
             <div class="col-md-3">
                 <div class="single-work wow fadeInUp"  data-wow-delay="1s">
                     <img src="../img/how-work1.png" alt="">
@@ -148,6 +150,8 @@ use common\models\FormOfferProject;
                     <p>Розробник інноваційного проекту</p>
                 </div>
             </div>
+            </a>
+            <a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/executor/index') ?>">
             <div class="col-md-3">
                 <div class="single-work wow fadeInUp"  data-wow-delay="1s">
                     <img src="../img/how-work2.png" alt="">
@@ -155,6 +159,7 @@ use common\models\FormOfferProject;
                     <p>Фахівець певної галузі, який бажає взяти участь у проекті</p>
                 </div>
             </div>
+            </a>
         </div>
     </div>
     <hr>
@@ -210,43 +215,44 @@ use common\models\FormOfferProject;
             </ul>
         </div>
     </div>
-
- 
-<div class="homeSection-categories homeSection-subSection">
+</div>
 
 
-    <div class="row page-title text-center wow bounce animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: bounce;">
-
-        <h2>Оберіть сферу діяльності</h2>
-    </div>
+    <div class="homeSection-categories homeSection-subSection">
 
 
+        <div class="row page-title text-center wow bounce animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: bounce;">
 
-    <div class="container odd wow fadeInLeft" data-wow-delay="1s">    
-        <div class="row">
-
-<?php
-$counter = 1;
-foreach ($economicActivities as $key) {
-    //if($key->pid==NULL){
-    ?>
-
-                <a class="homeTile ng-isolate-scope" href="/explore/technology" ga-event-on="click" ga-event-category="Homepage" ga-event-action="Explore" ga-event-label="Technology">
-                    <div class="homeTile-content" style="background-image: url('../img/eco_category/e<?= $counter ?>.png')">
-                        <div class="homeTile-background"></div>
-                        <div class="homeTile-icon">    <svg class=""><use xmlns:xlink="" xlink:href="#icon-icon-technology"></use></svg>
-                        </div>
-                        <div class="homeTile-title">
-    <?= $key->name ?>
-                        </div>
-                    </div>
-                </a>
-    <?php
-    $counter++;
-//}
-}
-?> 
+            <h2>Оберіть сферу діяльності</h2>
         </div>
 
+
+
+        <div class="container odd wow fadeInLeft" data-wow-delay="1s">    
+            <div class="row">
+
+                <?php
+                $counter = 1;
+                foreach ($economicActivities as $key) {
+                    //if($key->pid==NULL){
+                    ?>
+
+                    <a class="homeTile ng-isolate-scope" href="/explore/technology" ga-event-on="click" ga-event-category="Homepage" ga-event-action="Explore" ga-event-label="Technology">
+                        <div class="homeTile-content" style="background-image: url('../img/eco_category/e<?= $counter ?>.png')">
+                            <div class="homeTile-background"></div>
+                            <div class="homeTile-icon">    <svg class=""><use xmlns:xlink="" xlink:href="#icon-icon-technology"></use></svg>
+                            </div>
+                            <div class="homeTile-title">
+                                <?= $key->name ?>
+                            </div>
+                        </div>
+                    </a>
+                    <?php
+                    $counter++;
+//}
+                }
+                ?> 
+            </div>
+
+        </div>
     </div>
-</div>

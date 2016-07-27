@@ -86,7 +86,7 @@ use common\models\FormOfferProject;
                                                     <div class="layer">
                                                     <h4><small><?= $key1->project_name; ?></small></h4>   
                                                     </div>
-                                                    <a class="btn navbar-btn nav-button login" type="button" href="###">Детальніше</a>       
+                                                    <a class="btn navbar-btn nav-button login" type="button" href="#">Детальніше</a>       
                                                 </div><!-- End Item -->
                                             <?php } ?>                               
                                         </div><!-- End Carousel Inner -->
@@ -138,11 +138,11 @@ use common\models\FormOfferProject;
                         </ul>
                     </li>
 
-                    <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Інвестору</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Замовнику</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="#">Проектанту</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="#">Виконавцю</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="#">Контакти</a></li>
+                    <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/investor/index')?>">Інвестору</a></li>
+                    <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/customer/index')?>">Замовнику</a></li>
+                    <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/designer/index')?>">Проектанту</a></li>
+                    <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/executor/index')?>">Виконавцю</a></li>
+                    <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/contact')?>">Контакти</a></li>
 
                 </ul>
                 <div class="button navbar-right">

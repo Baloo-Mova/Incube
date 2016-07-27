@@ -1,5 +1,5 @@
  <div class="footer-area">
-            <div class="container">
+            <!--<div class="container">-->
                 <div class="row footer">
                     <div class="col-md-4">
                         <div class="single-footer">
@@ -42,5 +42,5 @@
                 <div class="row footer-copy">
                     <p><span>(C) webstie, All rights reserved</span> | <span>Graphic Designed by <a href="#">VlaD_77</a></span> | <span> Web Designed by <a href="#">VlaD_77</a></span> </p>
                 </div>
-            </div>
+            <!--</div>-->
         </div>
