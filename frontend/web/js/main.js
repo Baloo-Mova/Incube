@@ -90,3 +90,8 @@ $(document).ready(function() {
     $('#list').click(function(event){event.preventDefault();$('#products .item').removeClass('grid-group-item');$('#products .item').addClass('list-group-item');});
     $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
 });
+function changeView(t){
+    switch(t){
+        case"grid":$(".product-grid").removeClass("product-listview"),$(".product-grid > div").removeClass("reset-col");
+            break;
+        case"list":$(".product-grid").addClass("product-listview"),$(".product-grid > div").addClass("reset-col");}};

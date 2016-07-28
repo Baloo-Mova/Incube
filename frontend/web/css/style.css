@@ -900,7 +900,15 @@ a {
     background-color: #BF0068;
     border-color: #800046;
 }
-
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active,
+.open{
+     color: #428BCA;
+    background-color: #BF0068;
+    border-color: #800046;
+    
+}
 .board{
     //width: 100%;
     //margin: 60px auto;
@@ -1074,7 +1082,7 @@ li.active span.round-tabs.five{
 }
 .tab-pane{
     position: relative;
-    padding-top: 50px;
+   // padding-top: 50px;
 }
 .tab-content .head{
     font-family: 'Roboto Condensed', sans-serif;
@@ -1460,3 +1468,4 @@ li.active span.round-tabs.five{
 .service-image-left > center > img,.service-image-right > center > img{
 	max-height: 155px;
 }
+

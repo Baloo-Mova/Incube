@@ -1,6 +1,6 @@
  <div class="footer-area">
-            <!--<div class="container">-->
-                <div class="row footer">
+            <div class="container">
+                <div class="row footer text-center">
                     <div class="col-md-4">
                         <div class="single-footer">
                             <img src="../img/footer-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
@@ -39,8 +39,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row footer-copy">
+                <div class="row footer-copy text-center">
                     <p><span>(C) webstie, All rights reserved</span> | <span>Graphic Designed by <a href="#">VlaD_77</a></span> | <span> Web Designed by <a href="#">VlaD_77</a></span> </p>
                 </div>
-            <!--</div>-->
+            </div>
         </div>
