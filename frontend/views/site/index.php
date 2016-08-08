@@ -11,7 +11,7 @@ use common\models\FormOfferProject;
         <div class="row page-title text-center wow zoomInLeft" data-wow-delay="1s">
             <h2>Про нас</h2>
         </div>
-        <div class="row how-it-work text-center">
+        <div class="row how-it-work">
 
 
             <div class="board"> 
@@ -63,9 +63,8 @@ use common\models\FormOfferProject;
                             Дана платформа розрахована на реалізацію молодіжних наукових розробок, актуальних для промислових і сільськогосподарських підприємств Запорізького регіону.
 
                         </h4>
-
                         <p class="text-center">
-                            <a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/about')?>" class="btn btn-success btn-outline-rounded green"> Детальніше <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                            <a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/about') ?>" class="btn btn-success btn-outline-rounded green"> Детальніше <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
                         </p>
                     </div>
                     <div class="tab-pane fade" id="profile">
@@ -107,6 +106,8 @@ use common\models\FormOfferProject;
                         <h4 class="narrow text-center">
                             Дякуємо за те, що ви берете участь у роботі платформи.
                         </h4>
+                         
+                          
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -134,31 +135,31 @@ use common\models\FormOfferProject;
                 </div>
             </a>
             <a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/investor/index') ?>">
-            <div class="col-md-3">
-                <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s">
-                    <img src="../img/investor_desc_logo.png" alt="">
-                    <h3>Інвестор</h3>
-                    <p>Юридичні та фізичні особи, які можуть вкладувати кошти у інноваційний проект</p>
+                <div class="col-md-3">
+                    <div class="single-work  wow fadeInUp"  data-wow-delay="0.9s">
+                        <img src="../img/investor_desc_logo.png" alt="">
+                        <h3>Інвестор</h3>
+                        <p>Юридичні та фізичні особи, які можуть вкладувати кошти у інноваційний проект</p>
+                    </div>
                 </div>
-            </div>
             </a>
             <a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/designer/index') ?>">
-            <div class="col-md-3">
-                <div class="single-work wow fadeInUp"  data-wow-delay="1s">
-                    <img src="../img/how-work1.png" alt="">
-                    <h3>Проектант</h3>
-                    <p>Розробник інноваційного проекту</p>
+                <div class="col-md-3">
+                    <div class="single-work wow fadeInUp"  data-wow-delay="1s">
+                        <img src="../img/how-work1.png" alt="">
+                        <h3>Проектант</h3>
+                        <p>Розробник інноваційного проекту</p>
+                    </div>
                 </div>
-            </div>
             </a>
             <a href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/executor/index') ?>">
-            <div class="col-md-3">
-                <div class="single-work wow fadeInUp"  data-wow-delay="1s">
-                    <img src="../img/how-work2.png" alt="">
-                    <h3>Виконавець</h3>
-                    <p>Фахівець певної галузі, який бажає взяти участь у проекті</p>
+                <div class="col-md-3">
+                    <div class="single-work wow fadeInUp"  data-wow-delay="1s">
+                        <img src="../img/how-work2.png" alt="">
+                        <h3>Виконавець</h3>
+                        <p>Фахівець певної галузі, який бажає взяти участь у проекті</p>
+                    </div>
                 </div>
-            </div>
             </a>
         </div>
     </div>
@@ -218,41 +219,41 @@ use common\models\FormOfferProject;
 </div>
 
 
-    <div class="homeSection-categories homeSection-subSection">
+<div class="homeSection-categories homeSection-subSection">
 
 
-        <div class="row page-title text-center wow bounce animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: bounce;">
+    <div class="row page-title text-center wow bounce animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: bounce;">
 
-            <h2>Оберіть сферу діяльності</h2>
-        </div>
-
-
-
-        <div class="container odd wow fadeInLeft" data-wow-delay="1s">    
-            <div class="row">
-
-                <?php
-                $counter = 1;
-                foreach ($economicActivities as $key) {
-                    //if($key->pid==NULL){
-                    ?>
-
-                    <a class="homeTile ng-isolate-scope" href="/explore/technology" ga-event-on="click" ga-event-category="Homepage" ga-event-action="Explore" ga-event-label="Technology">
-                        <div class="homeTile-content" style="background-image: url('../img/eco_category/e<?= $counter ?>.png')">
-                            <div class="homeTile-background"></div>
-                            <div class="homeTile-icon">    <svg class=""><use xmlns:xlink="" xlink:href="#icon-icon-technology"></use></svg>
-                            </div>
-                            <div class="homeTile-title">
-                                <?= $key->name ?>
-                            </div>
-                        </div>
-                    </a>
-                    <?php
-                    $counter++;
-//}
-                }
-                ?> 
-            </div>
-
-        </div>
+        <h2>Оберіть сферу діяльності</h2>
     </div>
+
+
+
+    <div class="container odd wow fadeInLeft" data-wow-delay="1s">    
+        <div class="row">
+
+            <?php
+            $counter = 1;
+            foreach ($economicActivities as $key) {
+                //if($key->pid==NULL){
+                ?>
+
+                <a class="homeTile ng-isolate-scope" href="/explore/technology" ga-event-on="click" ga-event-category="Homepage" ga-event-action="Explore" ga-event-label="Technology">
+                    <div class="homeTile-content" style="background-image: url('../img/eco_category/e<?= $counter ?>.png')">
+                        <div class="homeTile-background"></div>
+                        <div class="homeTile-icon">    <svg class=""><use xmlns:xlink="" xlink:href="#icon-icon-technology"></use></svg>
+                        </div>
+                        <div class="homeTile-title">
+                            <?= $key->name ?>
+                        </div>
+                    </div>
+                </a>
+                <?php
+                $counter++;
+//}
+            }
+            ?> 
+        </div>
+
+    </div>
+</div>

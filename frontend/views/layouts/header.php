@@ -63,10 +63,10 @@ use common\models\FormOfferProject;
 
             <div class="collapse navbar-collapse js-navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="main-nav nav navbar-nav navbar-center">
-                    <li class="wow fadeInDown" data-wow-delay="0s"><a class="<?php if( \yii\helpers\Url::to('')=='/frontend/web/site/index'){  echo "active";}?>" href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/index') ?>">Головна</a></li>
+                    <li class="" data-wow-delay="0s"><a class="<?php if( \yii\helpers\Url::to('')=='/frontend/web/site/index'){  echo "active";}?>" href="<?= \yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/index') ?>">Головна</a></li>
                     <!--  <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="#">Проекти</a></li>-->
                     <li class=" dropdown mega-dropdown">
-                        <a href="#" class="dropdown-toggle wow fadeInDown <?php if( \yii\helpers\Url::to('')=='/frontend/web/project-viewer/index'){  echo "active";}?>" data-wow-delay="0s" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Проекти <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle  <?php if( \yii\helpers\Url::to('')=='/frontend/web/project-viewer/index'){  echo "active";}?>" data-wow-delay="0s" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Проекти <span class="caret"></span></a>
                         <ul class="dropdown-menu mega-dropdown-menu">
                             <li class="col-sm-2">
                                 <ul>
@@ -138,11 +138,11 @@ use common\models\FormOfferProject;
                         </ul>
                     </li>
 
-                    <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/investor/index')?>">Інвестору</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/customer/index')?>">Замовнику</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/designer/index')?>">Проектанту</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.3s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/executor/index')?>">Виконавцю</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/contact')?>">Контакти</a></li>
+                    <li class="" data-wow-delay="0.2s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/investor/index')?>">Інвестору</a></li>
+                    <li class="" data-wow-delay="0.2s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/customer/index')?>">Замовнику</a></li>
+                    <li class="" data-wow-delay="0.2s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/designer/index')?>">Проектанту</a></li>
+                    <li class="" data-wow-delay="0.3s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/executor/index')?>">Виконавцю</a></li>
+                    <li class="" data-wow-delay="0.4s"><a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/site/contact')?>">Контакти</a></li>
 
                 </ul>
                 <div class="button navbar-right">
