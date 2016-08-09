@@ -39,9 +39,9 @@ class m160809_095407_create_form_offer_investor extends Migration
                     'status' => Schema::TYPE_INTEGER, 
                 ],$tableOptions);
         
-        $this->createIndex('parentID_form_offer_investor_economic_activities', 'form_offer_investor', 'economic_activities_id');
-        $this->createIndex('parentID_form_offer_investor_publisher', 'form_offer_investor', 'author_id');
-        $this->createIndex('parentID_form_offer_investor_author', 'form_offer_investor', 'publisher_id');
+        $this->createIndex('economic_activities_id', 'form_offer_investor', 'economic_activities_id');
+        $this->createIndex('author_id', 'form_offer_investor', 'author_id');
+        $this->createIndex('publisher_id', 'form_offer_investor', 'publisher_id');
         
         $this->addForeignKey("economic_activities_ibfk1", "form_offer_investor", "economic_activities_id", "Economic_Activities", "id", "SET NULL", "SET NULL");
         $this->addForeignKey("publisher_ibfk1", "form_offer_investor", "publisher_id", "user", "id", "SET NULL", "SET NULL");
@@ -50,9 +50,9 @@ class m160809_095407_create_form_offer_investor extends Migration
 
     public function safeDown()
     {
-        $this->dropForeignKey('ParentIDF_form_offer_investor_Economic_Activities', 'form_offer_investor'); 
-        $this->dropForeignKey('ParentIDF_form_offer_investor_user_author', 'form_offer_investor'); 
-        $this->dropForeignKey("ParentIDF_form_offer_investor_user_publisher","form_offer_investor");
+        $this->dropForeignKey('economic_activities_ibfk1', 'form_offer_investor'); 
+        $this->dropForeignKey('publisher_ibfk1', 'form_offer_investor'); 
+        $this->dropForeignKey("author_ibfk1","form_offer_investor");
         $this->dropTable('form_offer_investor');
     }
     

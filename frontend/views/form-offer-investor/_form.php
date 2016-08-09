@@ -16,19 +16,17 @@ use yii\helpers\ArrayHelper;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_author')->hiddenInput(['value'=>Yii::$app->user->id])->label(false, ['style'=>'display:none'])?>
+    <?= $form->field($model, 'author_id')->hiddenInput(['value'=>Yii::$app->user->id])->label(false, ['style'=>'display:none'])?>
     
-    <?= $form->field($model, 'id_publisher')->hiddenInput(['value'=>0])->label(false, ['style'=>'display:none']) ?>
+    <?= $form->field($model, 'publisher_id')->hiddenInput(['value'=>0])->label(false, ['style'=>'display:none']) ?>
     
     <?= $form->field($model, 'investor_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'investor_contacts')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'stage_project')->textarea(['rows' => 6]) ?>
-
-    <!--<?= $form->field($model, 'economic_activities')->textInput() ?>-->
+    <?= $form->field($model, 'stage_project')->textarea(['rows' => 6]) ?> 
     <?=
-    $form->field($model, 'economic_activities')->widget(Select2::classname(), [
+    $form->field($model, 'economic_activities_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(common\models\EconomicActivities::find()->all(), 'id', 'name'),
         'language' => 'ru',
         'options' => ['placeholder' => 'Оберіть'],
@@ -69,9 +67,7 @@ $form->field($model, 'date_publish')->widget(DatePicker::classname(), [
         'format' => 'yyyy-mm-dd'
     ]
 ]);
-?>
-
-<?= $form->field($model, 'status')->textInput(['value'=>0])->label(false, ['style'=>'display:none']) ?>
+?> 
 
     <div class="form-group">
 <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
