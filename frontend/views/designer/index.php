@@ -68,7 +68,7 @@
                 <li class="active"><a href="#popular" data-toggle="tab">Питання(проблеми) для вирішення</a></li>
                 <li><a href="#featured" data-toggle="tab">Запроновані проекти</a></li>
                 <li><a href="#latest" data-toggle="tab">Проекти на реалізацію</a></li>  
-                <li><a href="#latest2" data-toggle="tab">Проекти на реалізацію2</a></li> 
+                 
               </ul>
               <!-- Tab panes -->
               <div class="tab-content">

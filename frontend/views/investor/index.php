@@ -15,7 +15,7 @@
 
     <p>Якщо ви хочете виступити інвестором - заповніть наступну форму: </p>
     <div class="text-center">
-        <a href="#" class="btn btn-lg btn-danger center">Подати заявку <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a href="../form-offer-investor/create" class="btn btn-lg btn-danger center">Подати заявку <span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
 </div>
 <hr/>

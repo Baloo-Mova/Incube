@@ -16,11 +16,10 @@ use yii\helpers\ArrayHelper;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_author')->textInput(['value'=>Yii::$app->user->id])?>
+    <?= $form->field($model, 'id_author')->hiddenInput(['value'=>Yii::$app->user->id])->label(false, ['style'=>'display:none'])?>
     
-    <?= $form->field($model, 'id_publisher')->textInput() ?>
+    <?= $form->field($model, 'id_publisher')->hiddenInput(['value'=>0])->label(false, ['style'=>'display:none']) ?>
     
-
     <?= $form->field($model, 'investor_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'investor_contacts')->textarea(['rows' => 6]) ?>
@@ -72,7 +71,7 @@ $form->field($model, 'date_publish')->widget(DatePicker::classname(), [
 ]);
 ?>
 
-<?= $form->field($model, 'status')->textInput() ?>
+<?= $form->field($model, 'status')->textInput(['value'=>0])->label(false, ['style'=>'display:none']) ?>
 
     <div class="form-group">
 <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
