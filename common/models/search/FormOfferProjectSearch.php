@@ -18,8 +18,8 @@ class FormOfferProjectSearch extends FormOfferProject
     public function rules()
     {
         return [
-            [['id', 'economic_activities', 'project_cost'], 'integer'],
-            [['project_name', 'project_goal', 'project_aspects', 'adress', 'phone', 'email', 'web_site', 'incube_help', 'region', 'stage_work', 'available_funding', 'country', 'date_b', 'date_e','files_folder'], 'safe'],
+            [['id', 'economic_activities_id', 'project_cost'], 'integer'],
+            [['project_name', 'project_goal', 'project_aspects', 'adress', 'phone', 'email', 'web_site', 'incube_help', 'region', 'stage_work', 'available_funding', 'country', 'date_b', 'date_e'], 'safe'],
         ];
     }
 
@@ -60,7 +60,7 @@ class FormOfferProjectSearch extends FormOfferProject
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'economic_activities' => $this->economic_activities,
+            'economic_activities_id' => $this->economic_activities_id,
             'project_cost' => $this->project_cost,
             'date_b' => $this->date_b,
             'date_e' => $this->date_e,

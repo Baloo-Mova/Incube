@@ -45,9 +45,9 @@ $(document).ready(function() {
       var $this = $(this);
       $this.toggleClass('more-jobs a');
       if($this.hasClass('more-jobs a')){
-        $this.text('View less jobs');     
+        $this.text('Менше');     
       } else {
-        $this.text('View more jobs');
+        $this.text('Більше');
       }
     });
 
@@ -75,20 +75,23 @@ if (document.body) {
   });
 }
 
-jQuery(document).ready(function($){
-    // Определяем координаты верха блока навигации
-  	$h = $('.kkllkll').offset().top;
-	$(window).scroll(function(){
-        // Если прокрутили скролл ниже макушки блока, включаем фиксацию
-		if ( $(window).scrollTop() > $h) {
-        	$(".navbar").css({"position":"fixed", "top":0});
-        }else{
-            //Иначе возвращаем всё назад. Тут вы вносите свои данные
-        	$(".navbar").css({"position":"absolute", "top":"50px"});
-        }
-  });
-});
-
+ 
 // Initializing WOW.JS
 
  new WOW().init();
+
+$(document).ready(function(ev){
+    $('#custom_carousel').on('slide.bs.carousel', function (evt) {
+      $('#custom_carousel .controls li.active').removeClass('active');
+      $('#custom_carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
+    });
+});
+$(document).ready(function() {
+    $('#list').click(function(event){event.preventDefault();$('#products .item').removeClass('grid-group-item');$('#products .item').addClass('list-group-item');});
+    $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+});
+function changeView(t){
+    switch(t){
+        case"grid":$(".product-grid").removeClass("product-listview"),$(".product-grid > div").removeClass("reset-col");
+            break;
+        case"list":$(".product-grid").addClass("product-listview"),$(".product-grid > div").addClass("reset-col");}};

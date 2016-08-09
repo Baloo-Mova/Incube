@@ -12,7 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-
+use common\models\EconomicActivities;
 /**
  * Site controller
  */
@@ -43,7 +43,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'logout' => ['get'],
                 ],
             ],
         ];
@@ -71,8 +71,12 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    { 
-        return $this->render('index');
+    {  
+        $economicActivities = EconomicActivities::find()->where(['pid'=>NULL])->all();
+             
+        return $this->render('index',[
+            'economicActivities' => $economicActivities,
+        ]);
     }
 
     /**
@@ -88,7 +92,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect('site/check');
+            return $this->redirect(\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/personal-area/index'));
         } else {
             return $this->render('login', [
                 'model' => $model,
@@ -105,7 +109,7 @@ class SiteController extends Controller
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        return $this->redirect('index');
     }
 
     /**
@@ -115,20 +119,21 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
+//        $model = new ContactForm();
+//        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+//            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+//                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+//            } else {
+//                Yii::$app->session->setFlash('error', 'There was an error sending email.');
+//            }
+//
+//            return $this->refresh();
+//        } else {
+//            return $this->render('contact', [
+//                'model' => $model,
+//            ]);
+//        }
+        return $this->render('contact');
     }
 
     /**
@@ -148,25 +153,21 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+       
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
-                    return $this->redirect('site/check');
+                    return $this->redirect(\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl.'/personal-area/index'));
                 }
             }
-        }
-
+        } 
         return $this->render('signup', [
             'model' => $model,
         ]);
     }
     
-    public function actionCheck(){
-        
-        return $this->redirect('site/index');
-        
-    }
+    
 
     /**
      * Requests password reset.

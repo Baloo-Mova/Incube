@@ -36,8 +36,8 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'incube_help')->textarea(['rows' => 6]) ?>
 
-    <!--<?= $form->field($model, 'economic_activities')->textInput() ?>-->
-    <?=$form->field($model, 'economic_activities')->widget(Select2::classname(), [
+    <!--<?= $form->field($model, 'economic_activities_id')->textInput() ?>-->
+    <?=$form->field($model, 'economic_activities_id')->widget(Select2::classname(), [
     'data' =>  ArrayHelper::map(common\models\EconomicActivities::find()->all(),'id','name'),
     'language' => 'ru',
     'options' => ['placeholder' => 'Оберіть'],

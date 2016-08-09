@@ -205,7 +205,8 @@ min-width: 480px) and (max-width: 767px){
     padding-left:6px;
     padding-right:6px;
     //display:none;
-    cursor:pointer
+    cursor:pointer;
+    text-align: center;    
 }
 @media (min-width: 768px){
     .homeTile{
@@ -274,9 +275,9 @@ min-width: 480px) and (max-width: 767px){
 }
 @media (min-width: 768px){
     .homeTile-content{
-                      flex-direction:column;
-                      margin-bottom:20px;
-                      min-height:140px
+        flex-direction:column;
+        margin-bottom:20px;
+        min-height:140px
     }
 }
 @media (min-width: 1002px){
@@ -288,7 +289,8 @@ min-width: 480px) and (max-width: 767px){
 .homeTile-title{
     color:#fff;
     text-shadow:0 1px 2px rgba(0,0,0,0.5);
-    font-weight:normal !important
+    font-weight:normal !important;
+    text-align: center;
 }
 .homeTile-background{
     position:absolute;
@@ -373,11 +375,11 @@ min-width: 480px) and (max-width: 767px){
         }
     }
     .communityTile{position:relative;
-                  float:left;
-                  width:100%;
-                  min-height:1px;
-                  padding-left:6px;
-                  padding-right:6px
+                   float:left;
+                   width:100%;
+                   min-height:1px;
+                   padding-left:6px;
+                   padding-right:6px
     }
     .communityTile:hover{
         text-decoration:none
@@ -398,11 +400,11 @@ min-width: 480px) and (max-width: 767px){
         position:absolute;
         top:0;
         left:0;
-            right:0;
-            bottom:0;
-            background-position:center;
-            background-size:cover;
-            z-index:-1
+        right:0;
+        bottom:0;
+        background-position:center;
+        background-size:cover;
+        z-index:-1
     }
     @media (max-width: 767px){
         .communityTile{
@@ -519,10 +521,10 @@ min-width: 480px) and (max-width: 767px){
         text-align:center;margin-bottom:20px
     }
     .sectionLeader-title{
-                        font-family:"Antenna Cond Black","Helvetica","sans-serif";
-                        font-size:30px;
-                        line-height:38px;
-                        letter-spacing:1px
+        font-family:"Antenna Cond Black","Helvetica","sans-serif";
+        font-size:30px;
+        line-height:38px;
+        letter-spacing:1px
     }
     @media (max-width: 768px){
         .sectionLeader-title{
@@ -530,19 +532,19 @@ min-width: 480px) and (max-width: 767px){
         }
     }
     .sectionLeader-copy{font-family:"Benton Sans","Helvetica","sans-serif";
-                       font-size:18px;
-                       font-weight:normal;
-                       line-height:28px;
-                       letter-spacing:0
+                        font-size:18px;
+                        font-weight:normal;
+                        line-height:28px;
+                        letter-spacing:0
     }
     .sectionHeader-title
     {
         line-height:22px;
         font-family:"Benton Sans Medium","Helvetica","sans-serif";
-            font-size:18px;
-            line-height:28px;
-            font-weight:normal;
-            letter-spacing:0
+        font-size:18px;
+        line-height:28px;
+        font-weight:normal;
+        letter-spacing:0
     }
     @media (max-width: 768px){
         .sectionHeader-title{
@@ -601,3 +603,86 @@ min-width: 480px) and (max-width: 767px){
         top:-50px;
         height:0px;
     }
+    
+    .pic
+{
+     margin-top:50px; 
+     width:120px;
+     margin-left:50px;
+     margin-bottom:-60px;
+     
+}
+
+.panel
+{
+    background-image:url("http://autoimagesize.com/wp-content/uploads/2014/01/rainbow-aurora-background-wallpaper-colour-images-rainbow-background.jpg"); 
+}
+
+.name
+{
+    position:absolute;
+    padding-left:200px;
+    font-size:30px;
+}
+
+.dropdown
+{
+    position:absolute;
+}
+
+.change
+{
+ position:relative; 
+ bottom:20px;
+ padding:1px;
+ color:white;
+ text-decoration:none;
+}
+
+
+.change:hover
+{
+ text-decoration:none;
+ background-color:black;
+ color:white;
+}
+ .form-signin input[type="text"] {
+        margin-bottom: 5px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .form-signin .form-control {
+        position: relative;
+        font-size: 16px;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        height: auto;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .vertical-offset-100 {
+        padding-top: 100px;
+    }
+    .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    }
+    .panel {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    }
+    
+ .reset-col {
+    width: 100% !important;   

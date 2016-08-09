@@ -7,7 +7,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\Vacancy;
-use common\models\AdminLoginForm;
+use common\models\LoginForm;
 use yii\base\Model;
 
 /**
@@ -63,9 +63,9 @@ class SiteController extends Controller {
             return $this->redirect('site/index');
         }
 
-        $model = new AdminLoginForm();
+        $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect('index');
         } else {
             return $this->render('login', [
                         'model' => $model,

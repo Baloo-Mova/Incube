@@ -23,11 +23,6 @@ AppAsset::register($this);
     <?php $this->head() ?>
    
 </head>
-
-
-<body>
-    
-   
   
 <?php $this->beginBody() ?>
 
@@ -38,13 +33,10 @@ AppAsset::register($this);
     <div class="container">
               <?= Alert::widget() ?>
         <?= $content ?>
-    </div>
-   
-    
-    
-    
-     <?= $this->render('//layouts/footer.php') ?>    
-<?php $this->endBody() ?>
-</body>
+    </div> 
+
+    <br/>
+     <?php echo $this->render('//layouts/footer.php') ?>    
+<?php $this->endBody() ?> 
 </html>
 <?php $this->endPage() ?>

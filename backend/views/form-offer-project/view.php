@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'web_site',
             'incube_help:ntext',
-            'economic_activities',
+            'economic_activities_id',
             'region',
             'stage_work',
             'project_cost',

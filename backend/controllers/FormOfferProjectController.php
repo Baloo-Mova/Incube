@@ -76,7 +76,9 @@ class FormOfferProjectController extends Controller {
                     $fileModel->save(); 
                 } 
                 return $this->redirect(['view', 'id' => $model->id]);
-            }
+            }else{
+                var_dump($model->errors);
+            } 
         } else {
             return $this->render('create', [
                         'model' => $model,
