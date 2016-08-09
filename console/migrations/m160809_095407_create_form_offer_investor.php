@@ -21,12 +21,12 @@ class m160809_095407_create_form_offer_investor extends Migration
         $this->createTable('form_offer_investor', 
                 [
                     'id' => Schema::TYPE_PK,
-                    'id_author' => Schema::TYPE_INTEGER,
-                    'id_publisher' => Schema::TYPE_INTEGER,
+                    'author_id' => Schema::TYPE_INTEGER,
+                    'publisher_id' => Schema::TYPE_INTEGER,
+                    'economic_activities_id' =>  Schema::TYPE_INTEGER,
                     'investor_name' => Schema::TYPE_STRING,
                     'investor_contacts' => Schema::TYPE_TEXT,
-                    'stage_project' => Schema::TYPE_TEXT,
-                    'economic_activities' =>  Schema::TYPE_INTEGER,
+                    'stage_project' => Schema::TYPE_TEXT, 
                     'region' => Schema::TYPE_STRING,
                     'investor_cost' => Schema::TYPE_INTEGER,
                     'duration_project'=>Schema::TYPE_INTEGER,
@@ -36,30 +36,23 @@ class m160809_095407_create_form_offer_investor extends Migration
                     'logo' => Schema::TYPE_STRING,
                     'date_create' => Schema::TYPE_DATE,
                     'date_publish' => Schema::TYPE_DATE,
-                    'status' => Schema::TYPE_INTEGER,
-
-
-
+                    'status' => Schema::TYPE_INTEGER, 
                 ],$tableOptions);
         
-        $this->createIndex('parentID_form_offer_investor_economic_activities', 'form_offer_investor', 'economic_activities');
-        $this->addForeignKey('ParentIDF_form_offer_investor_Economic_Activities', 'Economic_Activities', 'id', 'form_offer_investor', 'economic_activities');
+        $this->createIndex('parentID_form_offer_investor_economic_activities', 'form_offer_investor', 'economic_activities_id');
+        $this->createIndex('parentID_form_offer_investor_publisher', 'form_offer_investor', 'author_id');
+        $this->createIndex('parentID_form_offer_investor_author', 'form_offer_investor', 'publisher_id');
         
-        $this->createIndex('parentID_form_offer_investor_user', 'form_offer_investor', 'user');
-        $this->addForeignKey('ParentIDF_form_offer_investor_user', 'user', 'id', 'form_offer_investor', 'id_author');
-        $this->addForeignKey('ParentIDF_form_offer_investor_user', 'user', 'id', 'form_offer_investor', 'id_publisher');
-        
-        
-        
+        $this->addForeignKey("economic_activities_ibfk1", "form_offer_investor", "economic_activities_id", "Economic_Activities", "id", "SET NULL", "SET NULL");
+        $this->addForeignKey("publisher_ibfk1", "form_offer_investor", "publisher_id", "user", "id", "SET NULL", "SET NULL");
+        $this->addForeignKey("author_ibfk1", "form_offer_investor", "author_id", "user", "id", "SET NULL", "SET NULL");  
     }
 
     public function safeDown()
     {
-        $this->dropForeignKey('ParentIDF_form_offer_investor_Economic_Activities', 'form_offer_investor');
-        $this->dropIndex('parentID_form_offer_investor_economic_activities', 'form_offer_investor');
-        $this->dropForeignKey('ParentIDF_form_offer_investor_user', 'form_offer_investor');
-        $this->dropIndex('parentID_form_offer_investor_user', 'form_offer_investor');
-        
+        $this->dropForeignKey('ParentIDF_form_offer_investor_Economic_Activities', 'form_offer_investor'); 
+        $this->dropForeignKey('ParentIDF_form_offer_investor_user_author', 'form_offer_investor'); 
+        $this->dropForeignKey("ParentIDF_form_offer_investor_user_publisher","form_offer_investor");
         $this->dropTable('form_offer_investor');
     }
     
