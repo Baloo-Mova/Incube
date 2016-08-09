@@ -8,12 +8,12 @@ use Yii;
  * This is the model class for table "form_offer_investor".
  *
  * @property integer $id
- * @property integer $id_author
- * @property integer $id_publisher
+ * @property integer $author_id
+ * @property integer $publisher_id
  * @property string $investor_name
  * @property string $investor_contacts
  * @property string $stage_project
- * @property integer $economic_activities
+ * @property integer $economic_activities_id
  * @property string $region
  * @property integer $investor_cost
  * @property integer $duration_project
@@ -44,12 +44,12 @@ class FormOfferInvestor extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_author', 'id_publisher', 'economic_activities', 'investor_cost', 'duration_project', 'term_refund', 'status'], 'integer'],
+            [['author_id', 'publisher_id', 'economic_activities_id', 'investor_cost', 'duration_project', 'term_refund', 'status'], 'integer'],
             [['investor_contacts', 'stage_project'], 'string'],
             [['date_create', 'date_publish'], 'safe'],
             [['investor_name', 'region', 'plan_rent', 'other', 'logo'], 'string', 'max' => 255],
-            [['economic_activities'], 'exist', 'skipOnError' => true, 'targetClass' => EconomicActivities::className(), 'targetAttribute' => ['economic_activities' => 'id']],
-            [['id_author'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_author' => 'id']],
+            [['economic_activities_id'], 'exist', 'skipOnError' => true, 'targetClass' => EconomicActivities::className(), 'targetAttribute' => ['economic_activities_id' => 'id']],
+            [['author_id'], 'exist', 'targetClass' => User::className(), 'targetAttribute' => ['author_id' => 'id']],
         ];
     }
 
@@ -84,7 +84,7 @@ class FormOfferInvestor extends \yii\db\ActiveRecord
      */
     public function getEconomicActivities()
     {
-        return $this->hasOne(EconomicActivities::className(), ['id' => 'economic_activities']);
+        return $this->hasOne(EconomicActivities::className(), ['id' => 'economic_activities_id']);
     }
 
     /**
@@ -92,6 +92,10 @@ class FormOfferInvestor extends \yii\db\ActiveRecord
      */
     public function getIdAuthor()
     {
-        return $this->hasOne(User::className(), ['id' => 'id_author']);
+        return $this->hasOne(User::className(), ['id' => 'author_id']);
+    }
+    
+    public function getIdPublisher(){
+        return $this->hasOne(User::className(), ['id' => 'publisher_id']);
     }
 }

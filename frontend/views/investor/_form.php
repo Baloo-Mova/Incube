@@ -18,7 +18,7 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'author_id')->hiddenInput(['value'=>Yii::$app->user->id])->label(false, ['style'=>'display:none'])?>
     
-    <?= $form->field($model, 'publisher_id')->hiddenInput(['value'=>0])->label(false, ['style'=>'display:none']) ?>
+    <?= $form->field($model, 'publisher_id')->hiddenInput(['value'=>NULL])->label(false, ['style'=>'display:none']) ?>
     
     <?= $form->field($model, 'investor_name')->textInput(['maxlength' => true]) ?>
 
