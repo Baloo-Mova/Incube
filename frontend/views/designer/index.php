@@ -1,5 +1,8 @@
 <?php
 /* @var $this yii\web\View */
+use common\models\FormOfferExecutor;
+
+$executors = FormOfferExecutor::find()->where(['!=','status',0])->all();
 ?>
 <div class="row page-title text-center">
     <h2>Проектантам</h2>
@@ -51,7 +54,7 @@
 <hr/>
 <div class="row page-title text-center">
     
-    <h2>Запропонуйте свій проект до існуючого питання</h2>
+    <h2>Запропонуйте свій проект до існуючого питання або знайдіть виконавців</h2>
     
 </div>
 <br/>
@@ -66,8 +69,10 @@
               <!-- start prduct navigation -->
              <ul class="nav nav-tabs aa-products-tab">
                 <li class="active"><a href="#popular" data-toggle="tab">Питання(проблеми) для вирішення</a></li>
-                <li><a href="#featured" data-toggle="tab">Запроновані проекти</a></li>
-                <li><a href="#latest" data-toggle="tab">Проекти на реалізацію</a></li>  
+                <li><a href="#executers" data-toggle="tab">Резюме виконавців</a></li>
+                <li><a href="#projects" data-toggle="tab">Подані проекти</a></li>
+                
+                  
                  
               </ul>
               <!-- Tab panes -->
@@ -97,30 +102,31 @@
                 <!-- / popular problem category -->
                 
                 <!-- start prop-project category -->
-                <div class="tab-pane fade" id="featured">
+                <div class="tab-pane fade" id="executers">
                  <ul class="aa-product-catg aa-featured-slider">
                     <!-- start single product item -->
+                    <?php foreach($executors as $executor) { ?> 
                     <li>
                       <figure>
                         <a class="aa-product-img" href="#"><img src="../img/250n300.png" alt="polo shirt img"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="glyphicon glyphicon-arrow-right"></span>Продивитись</a>
+                        <a class="aa-add-card-btn"href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/executor/view?id='.$executor->id)?>"><span class="glyphicon glyphicon-arrow-right"></span>Продивитись</a>
                          <figcaption>
-                          <h4 class="aa-product-title"><a href="#">rrrr Random</a></h4>
-                          <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
+                          <h4 class="aa-product-title"> <?=$executor->executor_firstname ?> <?=$executor->executor_secondname ?></h4>
+                          <!--<span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>-->
                         </figcaption>
                       </figure>                     
                       
                       <!-- product badge -->
-                      <span class="aa-badge aa-sale" href="#">12344</span>
+                      <span class="aa-badge aa-sale" href="#"><?=$executor->id ?></span>
                     </li>
-                                                                                               
+                    <?php } ?>                                                                       
                   </ul>
                   <a class="btn btn-success btn-lg" href="#">Усі запропоновані проекти<span class="fa fa-long-arrow-right"></span></a>
                 </div>
                 <!-- / prop-projects category -->
 
                 <!-- start realiz-projects category -->
-                <div class="tab-pane fade" id="latest">
+                <div class="tab-pane fade" id="projects">
                   <ul class="aa-product-catg aa-latest-slider">
                     <!-- start single product item -->
                     <li>
