@@ -60,12 +60,12 @@ class FormOfferInvestor extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_author' => 'Id автора',
-            'id_publisher' => 'Id редактора',
+            'author_id' => 'Id автора',
+            'publisher_id' => 'Id редактора',
             'investor_name' => 'Інвестор',
             'investor_contacts' => 'Контактні дані',
             'stage_project' => 'Етап проекту',
-            'economic_activities' => 'Галузь',
+            'economic_activities_id' => 'Галузь',
             'region' => 'Регіон інвестування',
             'investor_cost' => 'Сума, яку готові інвестувати',
             'duration_project' => 'Період реалізації інвестиційного проекту',
@@ -98,4 +98,5 @@ class FormOfferInvestor extends \yii\db\ActiveRecord
     public function getIdPublisher(){
         return $this->hasOne(User::className(), ['id' => 'publisher_id']);
     }
+    
 }

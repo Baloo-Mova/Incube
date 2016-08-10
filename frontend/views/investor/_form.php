@@ -16,10 +16,10 @@ use yii\helpers\ArrayHelper;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'author_id')->hiddenInput(['value'=>Yii::$app->user->id])->label(false, ['style'=>'display:none'])?>
-    
-    <?= $form->field($model, 'publisher_id')->hiddenInput(['value'=>NULL])->label(false, ['style'=>'display:none']) ?>
-    
+    <?= $form->field($model, 'author_id')->hiddenInput(['value' => Yii::$app->user->id])->label(false, ['style' => 'display:none']) ?>
+
+    <?= $form->field($model, 'publisher_id')->hiddenInput(['value' => NULL])->label(false, ['style' => 'display:none']) ?>
+
     <?= $form->field($model, 'investor_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'investor_contacts')->textarea(['rows' => 6]) ?>
@@ -47,30 +47,36 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'other')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'logo')->textInput(['maxlength' => true]) ?>
+    <?=
+    $form->field($model, 'logo')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*'],
+        'pluginOptions' => [
+        //'uploadUrl' => Url::to(['../web/img/']),
+        'showUpload' => true,
+        ],
+    ])
+   
+            ?>
 
 
-<?=
-$form->field($model, 'date_create')->widget(DatePicker::classname(), [
-    'pluginOptions' => [
-        'autoclose' => true,
-        'format' => 'yyyy-mm-dd'
-    ]
-]);
-?>
+    <?=
+    $form->field($model, 'date_create')->widget(DatePicker::classname(), [
+        'value'=> Yii::$app->formatter->asDatetime(date('Y-d-m')),
+        'pluginOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd',
+           'todayHighlight' => true
+        ]
+    ]);
+    ?>
 
 
-<?=
-$form->field($model, 'date_publish')->widget(DatePicker::classname(), [
-    'pluginOptions' => [
-        'autoclose' => true,
-        'format' => 'yyyy-mm-dd'
-    ]
-]);
-?> 
+    <?=
+    $form->field($model, 'date_publish')->hiddenInput()->label(false, ['style' => 'display:none']) 
+    ?> 
 
     <div class="form-group">
-<?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    <?= Html::submitButton($model->isNewRecord ? 'Створити' : 'Оновити', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
 <?php ActiveForm::end(); ?>

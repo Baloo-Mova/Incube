@@ -1,5 +1,11 @@
 <?php
 /* @var $this yii\web\View */
+use common\models\FormOfferProblem;
+ 
+    $problems = FormOfferProblem::find()->where(['!=','status',0])->all();
+    
+    
+    
 ?>
 
 <div class="row page-title text-center">
@@ -62,19 +68,24 @@
                 <div class="tab-pane fade in active" id="popular">
                   <ul class="aa-product-catg aa-popular-slider">
                     <!-- start single product item -->
-                     <?php for ($i = 0; $i < 6; $i++) { ?>
+                    
+                     <?php
+                     
+                    foreach ($problems as $i) {
+                         
+                         ?>
                     <li>
                       <figure>
                         <a class="aa-product-img" href="#"><img src="../img/250n300.png" alt="polo shirt img"></a>
-                        <a class="aa-add-card-btn"href="#"><span class="glyphicon glyphicon-arrow-right"></span>Продивитись</a>
+                        <a class="aa-add-card-btn"href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/customer/view?id='.$i->id)?>"><span class="glyphicon glyphicon-arrow-right"></span>Продивитись</a>
                          <figcaption>
-                          <h4 class="aa-product-title"><a href="#">rrrr Random</a></h4>
-                          <span class="aa-product-price">$<?=number_format(rand(60,662000),0,'.','.')?></span><span class="aa-product-price"><del>$65.50</del></span>
+                          <h4 class="aa-product-title"><?=$i->problem_name?></h4>
+                          <!--<span class="aa-product-price">$<?=number_format(rand(60,662000),0,'.','.')?></span><span class="aa-product-price"><del>$65.50</del></span>-->
                         </figcaption>
                       </figure>                     
                      
                       <!-- product id -->
-                      <span class="aa-badge aa-sale" href="#"></span>
+                      <span class="aa-badge aa-sale" href="#"><?=$i->id?></span>
                     </li>
                      <?php } ?>                                
                   </ul>

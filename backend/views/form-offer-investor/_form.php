@@ -16,10 +16,10 @@ use yii\helpers\ArrayHelper;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_author')->textInput(['value'=>Yii::$app->user->id])?>
-    
-    <?= $form->field($model, 'id_publisher')->textInput() ?>
-    
+    <?= $form->field($model, 'author_id')->textInput(['value' => Yii::$app->user->id]) ?>
+
+    <?= $form->field($model, 'publisher_id')->textInput() ?>
+
 
     <?= $form->field($model, 'investor_name')->textInput(['maxlength' => true]) ?>
 
@@ -27,9 +27,9 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'stage_project')->textarea(['rows' => 6]) ?>
 
-    <!--<?= $form->field($model, 'economic_activities')->textInput() ?>-->
+    <!--<?= $form->field($model, 'economic_activities_id')->textInput() ?>-->
     <?=
-    $form->field($model, 'economic_activities')->widget(Select2::classname(), [
+    $form->field($model, 'economic_activities_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(common\models\EconomicActivities::find()->all(), 'id', 'name'),
         'language' => 'ru',
         'options' => ['placeholder' => 'Оберіть'],
@@ -50,34 +50,43 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'other')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'logo')->textInput(['maxlength' => true]) ?>
+    <!--<?= $form->field($model, 'logo')->textInput(['maxlength' => true]) ?>-->
+    <?=
+    $form->field($model, 'logo')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*'],
+        'pluginOptions' => [
+            //'uploadUrl' => Url::to(['../web/img/']),
+            'showUpload' => true,
+        ],
+    ])
+    ?>
 
 
-<?=
-$form->field($model, 'date_create')->widget(DatePicker::classname(), [
-    'pluginOptions' => [
-        'autoclose' => true,
-        'format' => 'yyyy-mm-dd'
-    ]
-]);
-?>
+    <?=
+    $form->field($model, 'date_create')->widget(DatePicker::classname(), [
+        'pluginOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd'
+        ]
+    ]);
+    ?>
 
 
-<?=
-$form->field($model, 'date_publish')->widget(DatePicker::classname(), [
-    'pluginOptions' => [
-        'autoclose' => true,
-        'format' => 'yyyy-mm-dd'
-    ]
-]);
-?>
+    <?=
+    $form->field($model, 'date_publish')->widget(DatePicker::classname(), [
+        'pluginOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd'
+        ]
+    ]);
+    ?>
 
-<?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->textInput() ?>
 
     <div class="form-group">
-<?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
-<?php ActiveForm::end(); ?>
+    <?php ActiveForm::end(); ?>
 
 </div>

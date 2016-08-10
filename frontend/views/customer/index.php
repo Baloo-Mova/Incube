@@ -1,5 +1,15 @@
 <?php
 /* @var $this yii\web\View */
+use common\models\FormOfferProblem;
+use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
+
+$dataProvider = new ActiveDataProvider([
+    'query' => FormOfferProblem::find()->where(['visibility'=>1])->orderBy('date DESC'),
+    'pagination' => [
+        'pageSize' => 20,
+    ],
+]);
 ?>
 <div class="row page-title text-center">
     <h2>Замовникам</h2>
@@ -18,7 +28,7 @@
 
 <p>Якщо ви хочете подати проблему - заповніть наступну форму: </p>
 <div class="text-center">
-    <a href="#" class="btn btn-lg btn-danger center">Подати заявку <span class="glyphicon glyphicon-chevron-right"></span></a>
+    <a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/customer/create')?>" class="btn btn-lg btn-danger center">Подати заявку <span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
 <hr/>
 <div class="row page-title text-center">
@@ -46,21 +56,28 @@
         </div>
     </div>
 <div class="product-grid row">
-
-    <?php for ($i = 0; $i < 10; $i++) { ?>
+ 
+    <?php 
+    $problems = FormOfferProblem::find()->where(['status'=>1])->all();
+    
+    
+    foreach ($problems as $i) { ?>
 
 
         <div class="col-lg-4 col-sm-6">
             <div class="thumbnail">
-                <a href="http://wrapbootstrap.com/preview/WB032SCB1?ref=StartBootstrap" class="post-image-link">
-                    <p><img src="http://sbootstrap.startbootstrapc.netdna-cdn.com/assets/img/premium/flex-admin.jpg" class="img-responsive" alt="Flex Admin - Bootstrap Admin Theme"></p>
+                <a href="#" class="post-image-link">
+                    <p><img src="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/img/')?>250n300.png" class="img-responsive" alt=""></p>
 
                 </a>
                 <div class="caption">
-                    <h3>Flex Admin</h3>
-                    <p>Responsive Admin Template</p>
-                    <a href="http://wrapbootstrap.com/preview/WB032SCB1?ref=StartBootstrap" class="btn btn-primary">Preview</a>
-                    <a href="https://wrapbootstrap.com/theme/flex-admin-responsive-admin-template-WB032SCB1?ref=StartBootstrap" class="btn btn-default">Purchase</a>
+                    <h3 class="text-center"><?=
+            $i->problem_name;
+            ?> 
+                    </h3>
+                    
+                    <a href="<?=\yii\helpers\Url::to(Yii::$app->urlManager->baseUrl . '/customer/view?id='.$i->id)?>" class="btn btn-primary">Продивитись</a>
+                    
                 </div>
             </div>
         </div>
