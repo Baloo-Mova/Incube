@@ -39,3 +39,5 @@ LICENSE.md
 *.md
 Vagrantfile
 requirements.php
+/frontend/web/assets/
+/backend/web/assets/
