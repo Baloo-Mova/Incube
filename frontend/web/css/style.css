@@ -406,17 +406,15 @@ body{
     font-weight: 300;
     font-size: 14px
 }
-.table tr td p i{
-    color: #00AEEF
-}
+
 .table tr td p{
     font-size: 13px
 }
 .table tr td a{
-    color: #fff;
-    background: #00AEEF;
-    padding:12px 15px;
-    border-radius: 5px;
+    //color: #fff;
+    //background: #00AEEF;
+    //padding:12px 15px;
+    //border-radius: 5px;
     font-size: 13px;
     text-decoration: none;
 
@@ -427,11 +425,11 @@ body{
     transition: all 0.1s ease-in-out;
 }
 .table tr:hover td a{
-    background: #0486B7
+   // background: #0486B7
 }
 .table tr:hover td a:hover{
-    background: #fff;
-    color: #00AEEF
+   // background: #fff;
+   // color: #00AEEF
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
     border-top: 0px;
@@ -449,16 +447,8 @@ body{
 .table > tbody > tr > td.tbl-title{
     padding-left: 5px
 }
-.table tr.odd{
-    background: #F9F9F9
-}
-.table tr.even{
-    background: #F4FFFF
-}
-.table tr:hover{
-    background: #00AEEF;
-    color: #fff
-}
+
+
 
 .more-jobs{
     margin-top: 30px

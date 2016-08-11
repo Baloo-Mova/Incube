@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 use common\models\EconomicActivities;
 
-
 /* @var $this yii\web\View */
 /* @var $model common\models\FormOfferProblem */
 
@@ -35,13 +34,35 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 
-    <div class="row show-grid">
+    <div class="row">
         <div class="col-md-6">
-            <div class="product col-md-9 service-image-left">
-
-                <center>
-                    <img id="item-display" src="../img/250n300.png" alt=""></img>
-                </center>
+            <div class="product">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr class="col-md-12">
+                    <td class="col-md-10"> <a href="##">Logo.png</a></td>
+                            <td class="col-md-1 text-center">
+                                <a href="#"><i class="fa fa-edit"></i> </a>
+                                </td>
+                            <td class="col-md-1 text-center">
+                                <input type="checkbox"> 
+                            </td>
+                        </tr>
+                        <tr class="col-md-12">
+                    <td class="col-md-10"> <a href="##">Present.ptt</a></td>
+                            <td class="col-md-1 text-center">
+                                <a href="#"><i class="fa fa-edit"></i> </a>
+                                </td>
+                            <td class="col-md-1 text-center">
+                               
+                            </td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                    
+                </table>
+                
             </div>
 
 
@@ -56,10 +77,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="panel panel-primary">
                 <div class="panel-heading text-center">Галузь</div>
                 <div class="panel-body"><?php
-                    foreach ($eco as $key) {
-                        echo "$key->name";
-                    }
-                    ?>
+        foreach ($eco as $key) {
+            echo "$key->name";
+        }
+        ?>
                 </div>
             </div>
 
@@ -76,25 +97,29 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="product-price">$ 1234.00</div>
             <div class="product-stock">In Stock</div>-->
             <hr>
+            
             <div class="btn-group cart">
-                <button type="button" class="btn btn-success glyphicon glyphicon-euro">
-                    Запропонувати  проект
-                </button>
+                <a href="#" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-euro"></i> Інвестувати
+                </a>
             </div>
             <div class="btn-group wishlist">
-                <button type="button" class="btn btn-primary glyphicon glyphicon-user">
-                    Прийняти участь
-                </button>
+                <a href="#" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-user"></i> Прийняти участь
+                </a>
+                
             </div>
         </div>
     </div>
-    <div class="container-fluid">		
-        <div class="col-md-12 product-info">
-            <ul id="myTab" class="nav nav-tabs nav_tabs text-center">
+    <div class="row">		
+        <div class="col-md-12 product-info ">
+            
 
-                <li class="active"><a href="#service-one" data-toggle="tab">Опис заявки</a></li>
-
-            </ul>
+                <div class="text-center page-title">
+                    <h3>Опис заявки</h3>
+                </div>
+                <hr/>
+            
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade in active" id="service-one">
 
