@@ -1,8 +1,6 @@
 <?php
 
-
-
-namespace frontend\controllers;
+namespace backend\controllers;
 
 use Yii;
 use common\models\FormOfferProjectFull;
@@ -11,7 +9,10 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-class DesignerController extends Controller
+/**
+ * FormOfferProjectFullController implements the CRUD actions for FormOfferProjectFull model.
+ */
+class FormOfferProjectFullController extends Controller
 {
     /**
      * @inheritdoc
@@ -120,5 +121,4 @@ class DesignerController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-
 }
